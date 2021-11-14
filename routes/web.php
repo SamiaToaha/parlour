@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\CustomerController;
+use App\Http\Controllers\backend\AdminController;
+use App\Http\Controllers\backend\AppointmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () { 
+//return view('admin.welcome');
+ //});
+Route::get('/customer',[CustomerController::class,'profile'])->name('customer.profile');
+Route::get('/admin',[AdminController::class,'profile'])->name('admin.profile');
+Route::get('/appointment',[AppointmentController::class,'profile'])->name('appointment.profile');
