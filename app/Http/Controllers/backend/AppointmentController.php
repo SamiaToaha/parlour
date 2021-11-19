@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
-    public function profile(){
-        return view('admin.pages.appointment');
+    public function profile()
+    {
+        return view ('admin.pages.appointment');
     }
 }
