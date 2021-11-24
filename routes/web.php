@@ -8,8 +8,8 @@ use App\Http\Controllers\backend\FeedbackController;
 use App\Http\Controllers\Admin\PackagesController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\BeauticianController;
-use App\Http\Controllers\backend\AppointmentController;
-use App\Http\Controllers\backend\ServiceTypesController;
+use App\Http\Controllers\Admin\AppointmentController;
+use App\Http\Controllers\backend\ServiceCategoryController;
 use App\Http\Controllers\backend\TimeScheduleController;
 
 
@@ -32,15 +32,16 @@ Route::get('/',[AdminController::class,'profile'])->name('admin.profile');
 Route::get('/appointment',[AppointmentController::class,'profile'])->name('appointment.profile');
 Route::get('/beautician',[BeauticianController::class,'profile'])->name('beautician.profile');
 Route::get('/service',[ServiceController::class,'profile'])->name('service.profile');
-Route::get('/service types',[ServiceTypesController::class,'profile'])->name('service types.profile');
+Route::get('/service category',[ServiceCategoryController::class,'profile'])->name('service category.profile');
 Route::get('/packages',[PackagesController::class,'profile'])->name('packages.profile');
 Route::get('/dashboard',[DashboardController::class,'profile'])->name('dashboard.profile');
 Route::get('/time schedule',[TimeScheduleController::class,'profile'])->name('time schedule.profile');
 Route::get('/feedback',[FeedbackController::class,'profile'])->name('feedback.profile');
+Route::get('/create/service',[ServiceController::class,'CreateService'])->name('service.create');
 
 //database
 
 
 
 
-Route::post('/service/store',[ServiceController::class,'profile'])->name('admin.service.store');
+Route::post('/service/store',[ServiceController::class,'ServiceStore'])->name('admin.service.store');

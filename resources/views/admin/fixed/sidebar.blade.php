@@ -44,9 +44,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('service types.profile')}}">
+            <a class="nav-link" href="{{route('service category.profile')}}">
               <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Service Types</span>
+              <span class="menu-title">Service Category</span>
             </a>
           </li>
           
