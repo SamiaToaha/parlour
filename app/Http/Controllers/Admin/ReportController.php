@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PackagesController extends Controller
+class ReportController extends Controller
 {
     public function profile(){
-        return view('admin.pages.packages');
+        return view('admin.pages.report');
     }
 }

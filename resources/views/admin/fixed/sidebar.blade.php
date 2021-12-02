@@ -12,9 +12,9 @@
             </a>
           </li>
          <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.profile')}}">
+            <a class="nav-link" href="{{route('users.profile')}}">
               <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Admin</span>
+              <span class="menu-title">Users</span>
             </a>
           </li>
           <li class="nav-item">
@@ -51,9 +51,9 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="{{route('packages.profile')}}">
+            <a class="nav-link" href="{{route('report.profile')}}">
               <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Packages</span>
+              <span class="menu-title">Report</span>
             </a>
           </li>
           <li class="nav-item">
