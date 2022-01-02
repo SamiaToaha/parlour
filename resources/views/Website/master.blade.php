@@ -53,6 +53,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
+<link rel='stylesheet' href='/css/style1.css' type='text/css' />
 	<link rel='stylesheet' id='wp-block-library-css'  href='https://perfectparlour.com/wp-includes/css/dist/block-library/style.min.css?ver=5.4.8' type='text/css' media='all' />
 <link rel='stylesheet' id='contact-form-7-css'  href='https://perfectparlour.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.2' type='text/css' media='all' />
 <link rel='stylesheet' id='rs-plugin-settings-css'  href='https://perfectparlour.com/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.1.6' type='text/css' media='all' />
@@ -666,11 +667,12 @@ h6 { }
     
               @yield('contents')      
     
-@include('website.fixed.footer')
+		@include('website.fixed.footer')
 
  
     <a id="back-to-top" href="#" class="show"></a>
 </div>
+
 
         <script type="text/javascript">
             window.jQuery = window.$ = jQuery;  

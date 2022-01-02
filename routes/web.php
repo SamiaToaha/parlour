@@ -9,10 +9,21 @@ use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\BeauticianController;
 use App\Http\Controllers\Admin\AppointmentController;
-use App\Http\Controllers\backend\ServiceCategoryController;
-use App\Http\Controllers\backend\TimeScheduleController;
+use App\Http\Controllers\Admin\ServiceCategoryController;
+use App\Http\Controllers\Admin\TimeSlotController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
+
+
+// website
+
 use App\Http\Controllers\frontend\IndexController;
 use App\Http\Controllers\frontend\MakeoverController;
+use App\Http\Controllers\frontend\HaircareController;
+use App\Http\Controllers\frontend\SkincareController;
+use App\Http\Controllers\frontend\HennaController;
+use App\Http\Controllers\Website\UserController;
+use App\Http\Controllers\frontend\HomeController;
+
 
 
 /*
@@ -26,34 +37,56 @@ use App\Http\Controllers\frontend\MakeoverController;
 |
 */
 
-// Route::get('/', function () { 
-//return view('admin.welcome');
- //});
+
+
+Route::get('/',function() {
+return view('admin.welcome');
+ });
+
+ Route::get('/admin/login',[AdminUserController::class,'login'])->name('admin.login');
+ Route::post('/admin/do-login',[AdminUserController::class,'doLogin'])->name('admin.doLogin');
+
+Route::get('/users',[UsersController::class,'profile'])->name('users.profile');
 Route::get('/customer',[CustomerController::class,'profile'])->name('customer.profile');
-Route::get('/user',[UsersController::class,'profile'])->name('users.profile');
-Route::get('/appointment',[AppointmentController::class,'profile'])->name('appointment.profile');
-Route::get('/beautician',[BeauticianController::class,'profile'])->name('beautician.profile');
-Route::get('/service',[ServiceController::class,'profile'])->name('service.profile');
-Route::get('/service category',[ServiceCategoryController::class,'profile'])->name('service category.profile');
+
+Route::get('/appointment',[AppointmentController::class,'booking'])->name('appointment.profile');
 Route::get('/report',[ReportController::class,'profile'])->name('report.profile');
-Route::get('/dashboard',[DashboardController::class,'profile'])->name('dashboard.profile');
-Route::get('/time schedule',[TimeScheduleController::class,'profile'])->name('time schedule.profile');
-Route::get('/feedback',[FeedbackController::class,'profile'])->name('feedback.profile');
-Route::get('/create/service',[ServiceController::class,'CreateService'])->name('service.create');
-Route::get('/create/service',[ServiceController::class,'CreateService'])->name('service.create');
+
+Route::get('/beautician',[BeauticianController::class,'visit_list'])->name('beautician.profile');
+Route::get('/beautician_list/add',[BeauticianController::class,'add'])->name('beautician_list.profile');
+
+Route::get('/admin/dashboard',[DashboardController::class,'profile'])->name('admin.dashboard.profile');
+Route::get('/feedback',[FeedbackController::class,'give'])->name('feedback.profile');
+Route::get('/time_slot',[TimeSlotController::class,'select'])->name('time_slot.profile');
+
+
+
+
+// Service
+Route::get('/services',[ServiceController::class,'view'])->name('admin.pages.service.service');
+Route::get('/service',[ServiceController::class,'CreateService'])->name('service.profile');
+
+
+
+
+// Service Category
+Route::get('/service_category',[ServiceCategoryController::class,'showcategory'])->name('service_category.profile');
+Route::get('/create/list',[ServiceCategoryController::class,'Create_list'])->name('create.list');
+Route::get('/create_service',[ServiceCategoryController::class,'create_service'])->name('create_service');
+
+
+
+
+
 
 //database
-
-
-
-
 Route::post('/service/store',[ServiceController::class,'ServiceStore'])->name('admin.service.store');
 Route::post('/booking/appointment',[AppointmentController::class,'AppointmentStore'])->name('admin.appointment.store');
 
 
+Route::post('/beautician/store',[BeauticianController::class,'BeauticianStore'])->name('admin.beautician.store');
 
-
-
+Route::get('/time_slot/store',[TimeSlotController::class,'TimeSlotStore'])->name('admin.time_slot.store');
 
 
 
@@ -65,9 +98,23 @@ Route::post('/booking/appointment',[AppointmentController::class,'AppointmentSto
 
 // frontend
 
-Route::get('/', function () { 
+ Route::get('/', function () { 
     return view('website.master');
-});
+ });
 
-Route::get('/dashboard',[IndexController::class,'dashboard'])->name('frontend.dashboard');
+Route::get('/home',[HomeController::class,'dashboard'])->name('home.dashboard');
+Route::get('/index',[IndexController::class,'dashboard'])->name('frontend.dashboard');
+
 Route::get('/makeover',[MakeoverController::class,'dashboard'])->name('makeover.dashboard');
+Route::get('/haircare',[HaircareController::class,'dashboard'])->name('haircare.dashboard');
+Route::get('/skincare',[SkincareController::class,'dashboard'])->name('skincare.dashboard');
+Route::get('/henna',[HennaController::class,'dashboard'])->name('henna.dashboard');
+
+Route::get('/showcategory',[ServiceCategoryController::class,'showcategory'])->name('show.category');
+
+
+Route::get('/registration',[UserController::class,'registration'])->name('user.registration');
+
+Route::post('/store/user',[UserController::class,'UserStore'])->name('user.store');
+Route::post('/login',[UserController::class,'login'])->name('user.login');
+Route::get('/logout',[UserController::class,'logout'])->name('user.logout');

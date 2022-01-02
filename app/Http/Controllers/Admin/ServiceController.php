@@ -8,9 +8,9 @@ use App\Models\Service;
 
 class ServiceController extends Controller
 {
-    public function profile(){
+    public function view(){
         $servicelist = Service::all();
-        return view('admin.pages.Service.service',compact('servicelist'));
+        return view('admin.pages.service.service',compact('servicelist'));
     }
     public function CreateService(){
         return view('admin.pages.Service.create_service');

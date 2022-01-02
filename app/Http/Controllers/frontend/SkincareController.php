@@ -5,9 +5,9 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HaircareController extends Controller
+class SkincareController extends Controller
 {
     public function dashboard(){
-    return view('website.haircare');
+        return view('website.skincare');
     }
 }

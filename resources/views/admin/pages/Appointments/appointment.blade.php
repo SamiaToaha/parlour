@@ -3,7 +3,7 @@
 @section('content')
 
 
-<form action="{{route('admin.appointment.store')}}" method='POST'>
+<form action="{{route('appointment.profile')}}" method='POST'>
     @csrf
 
 
@@ -18,8 +18,8 @@
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputPhoneNumber1" class="form-label">Phone_Number</label>
-    <input name='PhoneNumber' type="double" class="form-control" id="exampleInputPhoneNumber1">
+    <label for="exampleInputPhoneNumber1" class="form-label">PhoneNumber</label>
+    <input name='PhoneNumber' type="number" class="form-control" id="exampleInputPhoneNumber1">
    
     
   </div>

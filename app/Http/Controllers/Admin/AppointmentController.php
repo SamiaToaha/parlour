@@ -9,7 +9,7 @@ use App\Models\Appointment;
 
 class AppointmentController extends Controller
 {
-    public function profile()
+    public function booking()
     {
       $appointmentlist=Appointment::all();
       return view('admin.pages.Appointments.appointment',compact('appointmentlist'));
@@ -25,7 +25,7 @@ class AppointmentController extends Controller
             'id'=>$request->Id,
             'email'=>$request->Email,
             'name'=>$request->Name,
-            'phone_number'=>$request->Phone_Number,
+            'phone_number'=>$request->PhoneNumber,
             'address'=>$request->Address,
         ]);
         return view('admin.pages.Appointments.appointment_booking');

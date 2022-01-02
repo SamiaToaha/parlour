@@ -1,7 +1,9 @@
-@extends('admin.welcome')
-@section('content')
+@extends('website.master')
+@section('contents')
+
+
 <div class="pt-5 m-5 reg-form">
-<form  action="{{route('users.profile')}}" method='POST'>
+<form action="{{route('user.store')}}" width="50px" method="POST">
     @csrf
     @if(session()->has('success'))
   <p class="alert alert-success">
@@ -16,6 +18,11 @@
     
   </div>
 
+  <div class="form-group">
+    <label for="exampleInputEmail1">Phone number</label>
+    <input type="text" name="Phone_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone number">
+    
+  </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -30,6 +37,16 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
+
+
+
+
+
+
+
+
+
+
 
 
 

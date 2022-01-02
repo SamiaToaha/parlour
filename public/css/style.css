@@ -8660,7 +8660,7 @@
     line-height: 1.5;
     color: #666666;
     text-align: left;
-    background-color: #fff;
+    background-color:rgb(144, 198, 223) !important ;
   }
   
   [tabindex="-1"]:focus:not(:focus-visible) {
@@ -10138,6 +10138,11 @@
     background-color: #fac7fe;
   }
   
+  .heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
   .table-primary th,
   .table-primary td,
   .table-primary thead th,

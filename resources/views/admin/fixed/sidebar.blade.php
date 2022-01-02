@@ -6,7 +6,7 @@
         <ul class="nav">
 
         <li class="nav-item">
-            <a class="nav-link" href="{{route('dashboard.profile')}}">
+            <a class="nav-link" href="{{route('admin.dashboard.profile')}}">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -18,7 +18,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('customer.profile')}}">
+            <a class="nav-link" href="#">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Customer</span>
             </a>
@@ -38,15 +38,22 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('service.profile')}}">
+            <a class="nav-link" href=" {{route('admin.pages.service.service')}} ">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Service</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('service category.profile')}}">
+            <a class="nav-link" href="{{route('service_category.profile')}}">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Service Category</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('service.profile')}}">
+              <i class="icon-box menu-icon"></i>
+              <span class="menu-title">Create Service</span>
             </a>
           </li>
           
@@ -57,9 +64,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('time schedule.profile')}}">
+            <a class="nav-link" href="{{route('time_slot.profile')}}">
               <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Time Schedule</span>
+              <span class="menu-title">Time Slot</span>
             </a>
           </li>
           

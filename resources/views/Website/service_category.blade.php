@@ -1,14 +1,17 @@
 @extends('website.master')
 @section('contents')
+
+<h4>
+    Service Category List
+</h4>
+
 <div class="reg-form">
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
-      
       <th scope="col">Name</th>
-     
      
       
      
@@ -44,10 +47,6 @@
   </tbody>
 </table>
 </div>
-
-
-
-
 
 
 

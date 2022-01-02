@@ -1,5 +1,7 @@
 @extends('admin.welcome')
 @section('content')
+<form  action="{{route('customer.profile')}}" method='POST'>
+    @csrf
 <div class="mb-3">
     <label for="exampleInputName1" class="form-label">Name</label>
     <input name='Name' type="text" class="form-control" id="exampleInputNamet1">
