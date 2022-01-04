@@ -1,4 +1,4 @@
-@extends('Website.master')
+@extends('admin.welcome')
 @section('content')
 
 <a href="{{route('create_service')}}"><button type="submit" class="btn btn-success">Create Service</button></a>

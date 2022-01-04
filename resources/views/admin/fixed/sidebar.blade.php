@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=" {{route('admin.pages.service.service')}} ">
+            <a class="nav-link" href=" {{route('admin.service')}} ">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Service</span>
             </a>

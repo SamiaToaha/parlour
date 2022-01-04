@@ -52,8 +52,12 @@ Route::get('/customer',[CustomerController::class,'profile'])->name('customer.pr
 Route::get('/appointment',[AppointmentController::class,'booking'])->name('appointment.profile');
 Route::get('/report',[ReportController::class,'profile'])->name('report.profile');
 
+
+// Beautician
+
 Route::get('/beautician',[BeauticianController::class,'visit_list'])->name('beautician.profile');
 Route::get('/beautician_list/add',[BeauticianController::class,'add'])->name('beautician_list.profile');
+Route::get('/beautician/search',[BeauticianController::class,'beauticianSearch'])->name('beautician.search');
 
 Route::get('/admin/dashboard',[DashboardController::class,'profile'])->name('admin.dashboard.profile');
 Route::get('/feedback',[FeedbackController::class,'give'])->name('feedback.profile');
@@ -63,8 +67,8 @@ Route::get('/time_slot',[TimeSlotController::class,'select'])->name('time_slot.p
 
 
 // Service
-Route::get('/services',[ServiceController::class,'view'])->name('admin.pages.service.service');
-Route::get('/service',[ServiceController::class,'CreateService'])->name('service.profile');
+Route::get('/services',[ServiceController::class,'view'])->name('admin.service');
+Route::get('/service/',[ServiceController::class,'CreateService'])->name('service.profile');
 
 
 
@@ -82,11 +86,12 @@ Route::get('/create_service',[ServiceCategoryController::class,'create_service']
 //database
 Route::post('/service/store',[ServiceController::class,'ServiceStore'])->name('admin.service.store');
 Route::post('/booking/appointment',[AppointmentController::class,'AppointmentStore'])->name('admin.appointment.store');
-
+Route::get('/beautician',[BeauticianController::class,'visit_list'])->name('beautician.profile');
 
 Route::post('/beautician/store',[BeauticianController::class,'BeauticianStore'])->name('admin.beautician.store');
 
 Route::get('/time_slot/store',[TimeSlotController::class,'TimeSlotStore'])->name('admin.time_slot.store');
+
 
 
 
@@ -104,6 +109,7 @@ Route::get('/time_slot/store',[TimeSlotController::class,'TimeSlotStore'])->name
 
 Route::get('/home',[HomeController::class,'dashboard'])->name('home.dashboard');
 Route::get('/index',[IndexController::class,'dashboard'])->name('frontend.dashboard');
+
 
 Route::get('/makeover',[MakeoverController::class,'dashboard'])->name('makeover.dashboard');
 Route::get('/haircare',[HaircareController::class,'dashboard'])->name('haircare.dashboard');
