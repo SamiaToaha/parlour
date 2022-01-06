@@ -13,10 +13,10 @@ class BeauticianController extends Controller
         if(request()->search){
         $key= request()->search;
            $beauticianlist = Beautician::where('name','LIKE',"%{$key}%")->get();
-           return view('admin.pages.beautician',compact('beauticianlist','key'));
+           return view('admin.pages.Beauty.beautician',compact('beauticianlist','key'));
         }
         $beauticianlist = Beautician::all();
-        return view('admin.pages.beautician',compact('beauticianlist','key'));
+        return view('admin.pages.Beauty.beautician',compact('beauticianlist','key'));
     
 }
 
@@ -52,7 +52,15 @@ public function BeauticianStore(Request $request){
 }
 public function add()
 {
-    return view('admin.pages.beautician_list');
+    return view('admin.pages.Beauty.beautician_list');
+}
+
+
+public function beauticianDetails($beautician_id)
+{
+    $beauty=beautician::find($beautician_id);
+    //      $product=Product::where('id',$product_id)->first();
+            return view('admin.pages.Beauty.details',compact('beauty'));
 }
 // public function beauticianSearch()
 // {
@@ -62,5 +70,24 @@ public function add()
     
 
 // }
+public function beauticianDelete($beautician_id)
+{
+    Beautician::find($beautician_id)->delete();
+   return redirect()->back()->with('success','beautician Deleted.');
+}
+
+public function beauticianupdate($id)
+{
+    $b = Beautician::find($id)->first();
+    return view('admin.pages.beauty.update',compact('b'));
+}
+public function actual_update($id, Request $req)
+{
+    $b = Beautician::find($id)->first();
+    $b->update([
+        'details'=>$req->details
+    ]);
+    return redirect()->route('beautician.profile');
+}
 
 }

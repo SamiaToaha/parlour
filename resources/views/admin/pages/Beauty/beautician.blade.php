@@ -19,6 +19,8 @@
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Details</th>
+      <th scope="col">Action</th>
+     
       
       <th></th>
       <th></th>
@@ -34,8 +36,12 @@
       <th>{{$key+1}}</th>
       <td>{{$item->name}}</td>
       <td>{{$item->details}}</td>
-      <td><img src="{{url('storage/beautician/'.$item->image)}}" alt=""></td>
-     
+      <td><img src="{{url($item->image)}}" alt=""></td>
+      <td>
+                        <a class="btn btn-primary" href="{{route('beautician.view',$item->id)}}">View</a>
+                        <a class="btn btn-primary" href="{{route('beautician.delete',$item->id)}}">Delete</a>
+                        <a class="btn btn-primary" href="{{route('beautician.update',$item->id)}}">UPDATE</a>
+</td>
       
     </tr>
     @endforeach

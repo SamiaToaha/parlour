@@ -12,9 +12,7 @@ class ServiceController extends Controller
         $servicelist = Service::all();
         return view('admin.pages.Service.service',compact('servicelist'));
     }
-    public function CreateService(){
-        return view('admin.pages.Service.create_service');
-    }
+    
     public function ServiceStore(Request $request){
         //dd($request->all());
         Service::create([

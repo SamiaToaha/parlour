@@ -47,7 +47,16 @@ return view('admin.welcome');
  Route::post('/admin/do-login',[AdminUserController::class,'doLogin'])->name('admin.doLogin');
 
 Route::get('/users',[UsersController::class,'profile'])->name('users.profile');
-Route::get('/customer',[CustomerController::class,'profile'])->name('customer.profile');
+
+
+
+// Customer
+
+Route::get('/customer',[CustomerController::class,'show_list'])->name('customer.show');
+Route::get('/customer_list/add',[CustomerController::class,'add'])->name('customer_list.show');
+Route::get('/customer/search',[CustomerController::class,'customerSearch'])->name('customer.search');
+Route::get('/customer/details/view/{item_id}',[CustomerController::class,'customerDetails'])->name('customer.view');
+Route::get('/customer/delete/{item_id}',[CustomerController::class,'customerDelete'])->name('customer.delete');
 
 Route::get('/appointment',[AppointmentController::class,'booking'])->name('appointment.profile');
 Route::get('/report',[ReportController::class,'profile'])->name('report.profile');
@@ -58,6 +67,12 @@ Route::get('/report',[ReportController::class,'profile'])->name('report.profile'
 Route::get('/beautician',[BeauticianController::class,'visit_list'])->name('beautician.profile');
 Route::get('/beautician_list/add',[BeauticianController::class,'add'])->name('beautician_list.profile');
 Route::get('/beautician/search',[BeauticianController::class,'beauticianSearch'])->name('beautician.search');
+Route::get('/beautician/details/{item_id}',[BeauticianController::class,'beauticianDetails'])->name('beautician.view');
+Route::get('/beautician/delete/{item_id}',[BeauticianController::class,'beauticianDelete'])->name('beautician.delete');
+Route::get('/beautician/update/{item_id}',[BeauticianController::class,'beauticianupdate'])->name('beautician.update');
+Route::patch('/beautician/actual_update/{item_id}',[BeauticianController::class,'actual_update'])->name('beautician.actual_update');
+
+
 
 Route::get('/admin/dashboard',[DashboardController::class,'profile'])->name('admin.dashboard.profile');
 Route::get('/feedback',[FeedbackController::class,'give'])->name('feedback.profile');
@@ -68,7 +83,7 @@ Route::get('/time_slot',[TimeSlotController::class,'select'])->name('time_slot.p
 
 // Service
 Route::get('/services',[ServiceController::class,'view'])->name('admin.service');
-Route::get('/service/',[ServiceController::class,'CreateService'])->name('service.profile');
+
 
 
 
@@ -86,12 +101,15 @@ Route::get('/create_service',[ServiceCategoryController::class,'create_service']
 //database
 Route::post('/service/store',[ServiceController::class,'ServiceStore'])->name('admin.service.store');
 Route::post('/booking/appointment',[AppointmentController::class,'AppointmentStore'])->name('admin.appointment.store');
-Route::get('/beautician',[BeauticianController::class,'visit_list'])->name('beautician.profile');
 
+
+Route::get('/beautician',[BeauticianController::class,'visit_list'])->name('beautician.profile');
 Route::post('/beautician/store',[BeauticianController::class,'BeauticianStore'])->name('admin.beautician.store');
 
 Route::get('/time_slot/store',[TimeSlotController::class,'TimeSlotStore'])->name('admin.time_slot.store');
 
+// Route::get('/customer/2ns',[CustomerController::class,'profile'])->name('customer.show');
+Route::post('/customer/store',[CustomerController::class,'CustomerStore'])->name('admin.customer.store');
 
 
 

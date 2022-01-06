@@ -18,7 +18,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('customer.show')}}">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Customer</span>
             </a>
@@ -49,14 +49,6 @@
               <span class="menu-title">Service Category</span>
             </a>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('service.profile')}}">
-              <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Create Service</span>
-            </a>
-          </li>
-          
           <li class="nav-item">
             <a class="nav-link" href="{{route('report.profile')}}">
               <i class="icon-box menu-icon"></i>

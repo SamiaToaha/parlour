@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ServiceCategoryController extends Controller
 {
     public function showcategory(){
-        return view('admin.service_category');
+        return view('admin.pages.Service-Category.service_category');
     }
     
         public function create_service(){

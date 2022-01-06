@@ -1,5 +1,5 @@
 @extends('admin.welcome')
-@section('content')
+@section('content') 
 
   @csrf
 
@@ -43,7 +43,7 @@
     <div id="details" class="form-text"></div>
   </div>
   <div class="mb-3">
-    <label for="details" class="form-label">Details</label>
+    <label for="details" class="form-label">Image</label>
     <input name='image' type="file" class="form-control" id="id" aria-describedby="details">
     <div id="details" class="form-text"></div>
   </div>
