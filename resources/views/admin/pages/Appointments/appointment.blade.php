@@ -1,36 +1,59 @@
 @extends('admin.welcome')
-
 @section('content')
+<div class="heading">
+<h1>Appointment list</h1>
 
+<form action="{{route('appointment.profile')}}" method="GET">
+<input value="{{$key}}" name="search" class="search-input" type="text" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+    </form>
 
-<form action="{{route('appointment.profile')}}" method='POST'>
-    @csrf
+<a href="{{route('appointment.list')}}"><button type="button" class="btn btn-success">Booking Appointment</button></a>
+<a href="{{route('appointment.list')}}"><button type="button" class="btn btn-success">Payment</button></a>
+</div>
+<table class="table">
 
+  <thead> 
 
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input name='Email' type="string" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text"></div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputName1" class="form-label">Name</label>
-    <input name='Name' type="text" class="form-control" id="exampleInputNamet1">
-  </div>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Name</th>
+      <th scope="col">PhoneNumber</th>
+      <th scope="col">Address</th>
+      <th scope="col">Time</th>
+      <th scope="col">Date</th>
+      <th scope="col">Action</th>
+      
 
-  <div class="mb-3">
-    <label for="exampleInputPhoneNumber1" class="form-label">PhoneNumber</label>
-    <input name='PhoneNumber' type="number" class="form-control" id="exampleInputPhoneNumber1">
+      <th></th>
+      <th></th>
+      
+     
+    </tr>
+  </thead>
+  <tbody>
    
+   @foreach($bookinglist as $key=>$item)
+  <tr>
+      <th>{{$key+1}}</th>
+      <td>{{$item->name}}</td>
+      <td>{{$item->phonenumber}}</td>
+      <td>{{$item->address}}</td>
+      <td>{{$item->time}}</td>
+      <td>{{$item->date}}</td>
+      <td>
+   
+                        <a class="btn btn-primary" href="{{route('appointment.view',$item->id)}}">View</a>
+                        <a class="btn btn-primary" href="{{route('appointment.delete',$item->id)}}">Delete</a>
+        
+</td>
+
+      </tr>
+    @endforeach
+
+
     
-  </div>
-
-  <div class="mb-3">
-    <label for="exampleInputAddress1" class="form-label">Address</label>
-    <input name='Address' type="string" class="form-control" id="exampleInputAddress1">
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
+  </tbody>
+</table>
 
 @endsection

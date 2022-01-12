@@ -36,7 +36,7 @@
       <th>{{$key+1}}</th>
       <td>{{$item->name}}</td>
       <td>{{$item->details}}</td>
-      <td><img src="{{url($item->image)}}" alt=""></td>
+      <td><img src="{{url('storage/beautician/'.$item->image)}}" alt=""></td>
       <td>
                         <a class="btn btn-primary" href="{{route('beautician.view',$item->id)}}">View</a>
                         <a class="btn btn-primary" href="{{route('beautician.delete',$item->id)}}">Delete</a>

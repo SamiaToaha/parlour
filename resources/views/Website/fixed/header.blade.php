@@ -26,29 +26,35 @@
                         <li id="menu-item-3215"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3215">
                             <a title="Home" href="{{route('home.dashboard')}}">Home</a></li>
-                        <li><a href="{{route('beautician.profile')}}">Beautician list</a></li>
+                        <li><a href="{{route('website.expert')}}">Beautician list</a></li>
                         <li id="menu-item-1042"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a
-                            href="{{route('appointment.profile')}}">Appointment</a></li>
+                            href="{{route('website.booking')}}">Appointment</a></li>
+                            <li id="menu-item-1042"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a
+                            href="{{route('cart.get')}}">Cart({{session()->has('cart') ? count(session()->get('cart')):0}})</a></li>
                         <li id="menu-item-1209"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1209 ">
-                            <a title="Our Services" href="{{route('service.profile')}}">Our Services </a>
+                            <a title="Our Services" href="{{route('website.type')}}">Services </a>
                             <ul role="menu" class="">
 
-                                <li id="menu-item-2377"
+                            <li id="menu-item-2377"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377"><a
-                                        title="Makeover" href=" {{route('show.category')}} ">Makeover</a></li>
+                                        title="ServiceCategory" href=" {{route('Website.service_category')}} ">Service Category</a></li>
+                            <!-- <li id="menu-item-2377"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377"><a
+                                        title="Makeover" href=" # ">Makeover</a></li>
                                 <li id="menu-item-1210"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1210"><a
-                                        title="Hair Care" href=" {{route('haircare.dashboard')}} ">Hair Care</a></li>
+                                        title="Hair Care" href=" # ">Hair Care</a></li>
                                 <li id="menu-item-1215"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1215"><a
-                                        title="Skin Care" href=" {{route('skincare.dashboard')}} ">Skin Care</a></li>
+                                        title="Skin Care" href=" #} ">Skin Care</a></li>
                                 <li id="menu-item-1219"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1219"><a
-                                        title="Henna" href=" {{route('henna.dashboard')}} ">Henna</a></li>
+                                        title="Henna" href=" # ">Henna</a></li> -->
 
-                               
+                                       
 
                             </ul>
                         </li>

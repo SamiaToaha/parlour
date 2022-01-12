@@ -2,6 +2,9 @@
 @section('content')
 
 
+<form action="{{route('category.store')}}" method="POST">
+  @csrf
+
   @if(session()->has('success'))
   <p class="alert alert-success">
     
@@ -21,13 +24,8 @@
 </div>
 @endif
 
-<form action="{{route('admin.service.store')}}" method="POST">
-  @csrf
-  
 
-
-
-  <div class="mb-3">
+<div class="mb-3">
     <label for="name" class="form-label">Name</label>
     <input name='name' type="text" class="form-control" id="name">
   </div>
@@ -37,12 +35,12 @@
     <input name='id' type="number" class="form-control" id="id" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text"></div>
   </div>
-  <div class="mb-3">
-    <label for="price" class="form-label">Price</label>
-    <input name='price' type="number" class="form-control" id="id" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text"></div>
-  </div>
 
  <button type="submit" class="btn btn-primary"><a href=""></a>Submit</button>
 </form>
+
+
+
+
+  
 @endsection

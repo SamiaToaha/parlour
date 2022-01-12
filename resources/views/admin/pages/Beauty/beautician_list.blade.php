@@ -1,7 +1,7 @@
 @extends('admin.welcome')
 @section('content') 
 
-  @csrf
+ 
 
   @if(session()->has('success'))
   <p class="alert alert-success">

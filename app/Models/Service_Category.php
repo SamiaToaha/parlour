@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Service_Category extends Model
 {
     use HasFactory;
+    protected $table = 'service_categories';
     protected $guarded=[];
 }

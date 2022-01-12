@@ -12,13 +12,19 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-   @foreach($category as $category)
+   @foreach($type as $key=>$item)
     <tr>
-      <th>{{$category->id}}</th>
-      <td>{{$category->name}}</td>
+    <th>{{$key+1}}</th>
+      <td>{{$item->name}}</td>
+      <td>{{$item->price}}</td>
+       
+       <td><a class="btn btn-primary" href="{{route('service.show',$item->id)}}">View</a></td>
+     
     </tr>
     @endforeach
 
