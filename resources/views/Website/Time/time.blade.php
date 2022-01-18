@@ -22,7 +22,7 @@
      
     </tr>
   </thead>
-  </table>
+  <tbody>
   @foreach($choose as $item)
     <tr>
       <th>{{$item->serial}}</th>

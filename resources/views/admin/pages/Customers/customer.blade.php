@@ -8,7 +8,7 @@
     <button class="btn btn-success" type="submit">Search</button>
     </form>
 
-<a href="{{route('customer_list.show')}}"><button type="button" class="btn btn-success">Add Customer</button></a>
+<!-- <a href="{{route('customer_list.show')}}"><button type="button" class="btn btn-success">Add Customer</button></a> -->
 </div>
 
 <table class="table">
@@ -32,6 +32,7 @@
    @foreach($customerlist as $key=>$item)
   <tr>
       <th>{{$key+1}}</th>
+      <td>{{$item->id}}</td>
       <td>{{$item->name}}</td>
       <td>{{$item->details}}</td>
       <td>

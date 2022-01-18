@@ -4,17 +4,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Website\UserController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\ItemController;
 use App\Http\Controllers\frontend\TimeController;
 use App\Http\Controllers\Admin\TimeSlotController;
 use App\Http\Controllers\frontend\HennaController;
-use App\Http\Controllers\frontend\IndexController;
 
 
 // website
 
+use App\Http\Controllers\frontend\IndexController;
 use App\Http\Controllers\frontend\ExpertController;
 use App\Http\Controllers\backend\CustomerController;
 use App\Http\Controllers\backend\FeedbackController;
@@ -23,9 +24,11 @@ use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\frontend\ServicesController;
 use App\Http\Controllers\backend\BeauticianController;
+use App\Http\Controllers\frontend\FeedbacksController;
 use App\Http\Controllers\frontend\ExpertViewController;
 use App\Http\Controllers\frontend\ServiceViewController;
 use App\Http\Controllers\Admin\ServiceCategoryController;
+use App\Http\Controllers\frontend\CustomerProfileController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 
 
@@ -75,7 +78,7 @@ Route::get('/appointment/delete/{item_id}',[AppointmentController::class,'appoin
 
 
 
-Route::get('/report',[ReportController::class,'profile'])->name('report.profile');
+Route::get('/package',[PackageController::class,'offer'])->name(('package.profile'));
 
 
 // Beautician
@@ -130,6 +133,9 @@ Route::get('/category/delete/{item_id}',[ServiceCategoryController::class,'categ
 Route::get('/home',[HomeController::class,'dashboard'])->name('home.dashboard');
 Route::get('/index',[IndexController::class,'dashboard'])->name('frontend.dashboard');
 
+// Customer
+Route::get('/customers',[CustomerProfileController::class,'profile'])->name('website.profile');
+
 // Appointment
 
 Route::get('/check',[BookingController::class,'appointment'])->name('website.booking');
@@ -138,7 +144,7 @@ Route::get('/check',[BookingController::class,'appointment'])->name('website.boo
 Route::get('/item',[ItemController::class, 'viewCategory'])->name('Website.service_category');
 
 
-// Experts
+// Experts/Beautician
 Route::get('/visit',[ExpertController::class,'expert'])->name('website.expert');
 Route::get('/expert/visit/{id}',[ExpertViewController::class,'expertview'])->name('expert.visit.show');
 
@@ -149,6 +155,8 @@ Route::get('/service/view/{id}',[ServiceViewController::class,'serviceView'])->n
 // Time
 Route::get('/choose',[TimeController::class,'choose'])->name('website.time');
 
+// Feedback
+Route::get('/feedback/give',[FeedbacksController::class,'review'])->name('website.feedback');
 
 Route::get('/registration',[UserController::class,'registration'])->name('user.registration');
 

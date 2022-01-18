@@ -50,9 +50,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('report.profile')}}">
+            <a class="nav-link" href="{{route('package.profile')}}">
               <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Report</span>
+              <span class="menu-title">Packages</span>
             </a>
           </li>
           <li class="nav-item">
