@@ -19,8 +19,9 @@
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Price</th>
+      <th scope="col">Image</th>
       <th scope="col">Action</th>
-      <th scope="col"></th>
+      
      
       <th></th>
       <th></th>
@@ -33,7 +34,7 @@
       <th>{{$item->id}}</th>
       <td>{{$item->name}}</td>
       <td>{{$item->price}}</td>
-      <td><img src="{{url($item->image)}}" alt=""></td>
+      <td><img src="{{url('/storage/service/'.$item->image)}}" alt=""></td>
       <td>
                         <a class="btn btn-primary" href="{{route('service.view',$item->id)}}">View</a>
                         <a class="btn btn-primary" href="{{route('service.delete',$item->id)}}">Delete</a>

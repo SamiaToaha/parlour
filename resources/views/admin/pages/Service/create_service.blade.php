@@ -21,7 +21,7 @@
 </div>
 @endif
 
-<form action="{{route('admin.service.store')}}" method="POST">
+<form action="{{route('admin.service.store')}}" method="POST" enctype="multipart/form-data" >
   @csrf
   
 
@@ -42,6 +42,25 @@
     <input name='price' type="number" class="form-control" id="id" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text"></div>
   </div>
+  <div class="mb-3">
+    <label for="details" class="form-label">Image</label>
+    <input name='image' type="file" class="form-control" id="id" aria-describedby="details">
+    <div id="details" class="form-text"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="category" style="font-size:20px;"><b>Select Service Category</label></b>
+    <select name="category" class="form-control">
+      <option>Select Service Category</option>
+     
+
+      @foreach ($list as $item)
+
+
+      <option value="{{$item->id}}">{{$item->name}}</option>
+      @endforeach
+    </select>
+    </div>
 
  <button type="submit" class="btn btn-primary"><a href=""></a>Submit</button>
 </form>

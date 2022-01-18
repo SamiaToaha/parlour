@@ -12,6 +12,7 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
+      <th scope="col">Category</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,7 @@
     <tr>
       <th>{{$category->id}}</th>
       <td>{{$category->name}}</td>
+      <td>{{$category->category}}</td>
     </tr>
     @endforeach
 

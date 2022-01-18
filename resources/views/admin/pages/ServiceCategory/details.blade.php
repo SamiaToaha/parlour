@@ -6,6 +6,7 @@
     <h5 class="card-title">Category Details</h5>
         <p class="card-text" >Category Name: {{$list->name}}</p>
         <p class="card-text" >Category Id: {{$list->id}}</p>
+        <p class="card-text" >Category Type: {{$list->category}}</p>
 
 
         </div>

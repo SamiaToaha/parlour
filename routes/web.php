@@ -7,24 +7,23 @@ use App\Http\Controllers\Website\UserController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\ItemController;
+use App\Http\Controllers\frontend\TimeController;
 use App\Http\Controllers\Admin\TimeSlotController;
 use App\Http\Controllers\frontend\HennaController;
 use App\Http\Controllers\frontend\IndexController;
-use App\Http\Controllers\frontend\ExpertController;
 
 
 // website
 
+use App\Http\Controllers\frontend\ExpertController;
 use App\Http\Controllers\backend\CustomerController;
 use App\Http\Controllers\backend\FeedbackController;
 use App\Http\Controllers\frontend\BookingController;
 use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\backend\DashboardController;
-use App\Http\Controllers\frontend\HaircareController;
-use App\Http\Controllers\frontend\MakeoverController;
 use App\Http\Controllers\frontend\ServicesController;
-use App\Http\Controllers\frontend\SkincareController;
 use App\Http\Controllers\backend\BeauticianController;
+use App\Http\Controllers\frontend\ExpertViewController;
 use App\Http\Controllers\frontend\ServiceViewController;
 use App\Http\Controllers\Admin\ServiceCategoryController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
@@ -71,7 +70,7 @@ Route::get('/appointment',[AppointmentController::class,'booking'])->name('appoi
 Route::get('/appointment/list',[AppointmentController::class,'list'])->name('appointment.list');
 Route::post('/booking/appointment',[AppointmentController::class,'AppointmentStore'])->name('admin.appointment.store');
 Route::get('/appointment/search',[AppointmentController::class,'appointmentSearch'])->name('appointment.search');
-Route::get('/appointment/details/{item_id}',[AppointmentController::class,'appointmentDetails'])->name('appointment.view');
+Route::get('/appointment/details/{item_id}',[AppointmentController::class,'appointmentDetails'])->name('appointment.details');
 Route::get('/appointment/delete/{item_id}',[AppointmentController::class,'appointmentDelete'])->name('appointment.delete');
 
 
@@ -93,7 +92,14 @@ Route::patch('/beautician/actual_update/{item_id}',[BeauticianController::class,
 
 Route::get('/admin/dashboard',[DashboardController::class,'profile'])->name('admin.dashboard.profile');
 Route::get('/feedback',[FeedbackController::class,'give'])->name('feedback.profile');
-Route::get('/time_slot',[TimeSlotController::class,'select'])->name('time_slot.profile');
+
+
+// Time Slot
+
+Route::get('/time',[TimeSlotController::class,'select'])->name('timeslot.profile');
+Route::get('/time/create',[TimeSlotController::class,'time'])->name('time.create');
+Route::post('/time/store',[TimeSlotController::class,'TimeStore'])->name('admin.time.store');
+
 
 // Service
 
@@ -104,7 +110,7 @@ Route::get('/service/search',[ServiceController::class,'serviceSearch'])->name('
 Route::get('/service/details/{item_id}',[ServiceController::class,'serviceDetails'])->name('service.view');
 Route::get('/service/delete/{item_id}',[ServiceController::class,'serviceDelete'])->name('service.delete');
 Route::get('/service/update/{item_id}',[ServiceController::class,'serviceupdate'])->name('service.update');
-
+Route::patch('/service/actual_update/{item_id}',[ServiceController::class,'service_update'])->name('service.actual_update');
 
 // Service Category
 Route::get('/service_category',[ServiceCategoryController::class,'showcategory'])->name('service_category.profile');
@@ -113,24 +119,6 @@ Route::post('/category/store',[ServiceCategoryController::class,'CategoryStore']
 // Route::get('/category/search',[CategoryeController::class,'categorySearch'])->name('category.search');
 Route::get('/category/details/{item_id}',[ServiceCategoryController::class,'categoryDetails'])->name('category.view');
 Route::get('/category/delete/{item_id}',[ServiceCategoryController::class,'categoryDelete'])->name('category.delete');
-
-
-
-
-
-// database
-
-
-
-Route::get('/time_slot/store',[TimeSlotController::class,'TimeSlotStore'])->name('admin.time_slot.store');
-
-
-
-
-
-
-
-
 
 
 // frontend
@@ -142,23 +130,29 @@ Route::get('/time_slot/store',[TimeSlotController::class,'TimeSlotStore'])->name
 Route::get('/home',[HomeController::class,'dashboard'])->name('home.dashboard');
 Route::get('/index',[IndexController::class,'dashboard'])->name('frontend.dashboard');
 
+// Appointment
 
-Route::get('/item',[ItemController::class, 'viewCategory'])->name('Website.service_category');
 Route::get('/check',[BookingController::class,'appointment'])->name('website.booking');
 
-// Experts
+// Service Category
+Route::get('/item',[ItemController::class, 'viewCategory'])->name('Website.service_category');
 
+
+// Experts
 Route::get('/visit',[ExpertController::class,'expert'])->name('website.expert');
+Route::get('/expert/visit/{id}',[ExpertViewController::class,'expertview'])->name('expert.visit.show');
 
 // Services
-
 Route::get('/show',[ServicesController::class,'type'])->name('website.type');
 Route::get('/service/view/{id}',[ServiceViewController::class,'serviceView'])->name('service.show');
 
-// Route::get('/showcategory',[ServiceCategoryController::class,'showcategory'])->name('show.category');
+// Time
+Route::get('/choose',[TimeController::class,'choose'])->name('website.time');
 
 
 Route::get('/registration',[UserController::class,'registration'])->name('user.registration');
+
+// User login
 
 Route::post('/store/user',[UserController::class,'UserStore'])->name('user.store');
 Route::post('/login',[UserController::class,'login'])->name('user.login');
@@ -174,7 +168,7 @@ Route::group(['middleware'=>'web_auth'],function(){
 
  //Cart
 
-//  Route::get('/cart',[AppointmentController::class,'showlist'])->name('cart.website');
+
 
 
 

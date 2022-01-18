@@ -43,7 +43,7 @@
       <td>{{$item->date}}</td>
       <td>
    
-                        <a class="btn btn-primary" href="{{route('appointment.view',$item->id)}}">View</a>
+                        <a class="btn btn-primary" href="{{route('appointment.details',$item->id)}}">Appointment Details</a>
                         <a class="btn btn-primary" href="{{route('appointment.delete',$item->id)}}">Delete</a>
         
 </td>

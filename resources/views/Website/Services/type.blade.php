@@ -1,19 +1,27 @@
 @extends('website.master')
 @section('contents')
 
+
+<div class="reg-form">
 <h4>
     Service Category List
 </h4>
 
-<div class="reg-form">
 
+<input value="{{$key}}" name="search" class="search-input" type="text" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+    </div>
+
+    
+    
 <table class="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Price</th>
-      <th scope="col">Action</th>
+      <th scope="col">Image</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +30,8 @@
     <th>{{$key+1}}</th>
       <td>{{$item->name}}</td>
       <td>{{$item->price}}</td>
-       
+      <td><img style="border-radius: 4px;" width="100px;" src=" {{url('storage/service/'.$item->image)}}" alt="beautician"></td>
+      
        <td><a class="btn btn-primary" href="{{route('service.show',$item->id)}}">View</a></td>
      
     </tr>
@@ -30,7 +39,5 @@
 
   </tbody>
 </table>
-
-
 
 @endsection

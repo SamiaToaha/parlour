@@ -12,8 +12,16 @@ class ServicesController extends Controller
 {
     public function type(){
         $type=Service::all();
+
+        $key =null;
+        if(request()->search){
+        $key = request()->search;
+           $type = Service::with('category')->where('name','LIKE',"%{$key}%")->get();
+           return view('Website.Services.type',compact('type','key'));}
         
-        return view('Website.Services.type',compact('type'));
+
+           $type=Service::all();
+        return view('Website.Services.type',compact('type','key'));
         
         
             }

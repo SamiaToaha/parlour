@@ -34,7 +34,7 @@
       </th>
      
       <td>
-                        <a class="btn btn-primary" href="{{route('beautician.view',$item->id)}}">View</a>
+                        <a class="btn btn-primary" href="{{route('expert.visit.show',$item->id)}}">View</a>
                         </td>
       </tr>
     @endforeach

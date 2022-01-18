@@ -15,7 +15,7 @@
 <span><strong>Web:</strong><a href="https://perfectparlour.com/">https://perfectparlour.com/</a></span>
 </address></div></div>	</div>end col-lg-3 -->
 
-<div class="col-md-4">
+<!-- <div class="col-md-4">
 <div id="text-2" class="widget footer-widget widget_text"><h3>Our Opening Hours!</h3>			<div class="textwidget"><div class="box-border double">
 <ul class="list-border-bottom">
 <li>
@@ -30,7 +30,7 @@
 </li>
 </ul>
 </div></div>
-</div>	</div><!-- end col-lg-3 -->
+</div>	</div>end col-lg-3 -->
 
 <div class="col-md-4">
 <!-- <div id="text-3" class="widget footer-widget widget_text"><h3>Connect With Us!</h3>			<div class="textwidget"><address>
@@ -51,10 +51,7 @@
 <div class="subfooter">
 <div class="container">
 <div class="row">
-<div class="col-md-6">
-    © 2020 All Rights Reserved <a href="https://perfectparlour.com/">PerfectParlour.com</a>
-Designed and Developed by <a href="https://technoteams.com/" target="_blank" rel="noopener">TechnoTeams</a>           
-</div>
+
 <div class="col-md-6 text-right">
     <div class="social-icons">
                                             

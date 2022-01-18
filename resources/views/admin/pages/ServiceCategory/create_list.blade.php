@@ -24,6 +24,11 @@
 </div>
 @endif
 
+<div class="mb-3">
+    <label for="id" class="form-label">Id</label>
+    <input name='id' type="number" class="form-control" id="id" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text"></div>
+  </div>
 
 <div class="mb-3">
     <label for="name" class="form-label">Name</label>
@@ -31,8 +36,8 @@
   </div>
 
   <div class="mb-3">
-    <label for="id" class="form-label">Id</label>
-    <input name='id' type="number" class="form-control" id="id" aria-describedby="emailHelp">
+    <label for="category" class="form-label">Category</label>
+    <input name='category' type="text" class="form-control" id="id" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text"></div>
   </div>
 

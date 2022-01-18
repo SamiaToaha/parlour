@@ -62,7 +62,7 @@
 
                         <li id="menu-item-3136"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3136 ">
-                            <a href="{{route('time_slot.profile')}}">Time Schedule </a>
+                            <a href="{{route('website.time')}}">Time Schedule </a>
                             <!-- <li id="menu-item-1045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1045"><a  title="Contact" href="{{route('user.registration')}}">Register</a></li> -->
                         </li>
                         @if(auth()->user())

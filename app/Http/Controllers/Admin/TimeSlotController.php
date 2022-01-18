@@ -2,34 +2,33 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\TimeSlot;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\TimeSlotController;
 
-class ServiceController extends Controller
+class TimeSlotController extends Controller
 {
-    public function view(){
-        $createservice = Service::all();
-        
-        $key =null;
-        if(request()->search){
-        $key = request()->search;
-           $createservice = Service::where('name','LIKE',"%{$key}%")->get();
-           return view('admin.pages.Service.service',compact('createservice','key'));}
-        
-           $createservice = Service::all();
-           return view('admin.pages.Service.service',compact('createservice','key'));
-     }
-    
-    
-    public function TimeSlotStore(Request $request){
-        //dd($request->all());
-        TimeSlot::create([
-            'id'=>$request->id,
-            'name'=>$request->beautician_name,
-    
-    
-        ]);
-        return redirect()->back()->with('success','Add TimeSlot Successfully');
-    }
-    
+    public function select(){
+        $create=TimeSlot::all();
+        return view('admin.pages.Time.timeslot',compact('create'));
+       
+}
+
+
+public function TimeStore(Request $request){
+//    dd($request->all());
+    TimeSlot::create([
+        'serial'=>$request->serial,
+        'servicename'=>$request->service_name,
+        'timeslot'=>$request->time,    
+
+    ]);
+    return redirect()->back()->with('success','Time added Successfully');
+}
+public function time(){
+    $create=TimeSlot::all();
+    return view('admin.pages.Time.create',compact('create'));
+
+}
 }

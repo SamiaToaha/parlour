@@ -1,46 +1,66 @@
 @extends('website.master')
 @section('contents')
-<h4>
-    Service Category List
-</h4>
 
+<h1>Appointment</h1>
+
+
+@if(session()->has('success'))
+<p class="alert alert-success">
+  
+  {{session()->get('success')}}
+</p>
+@endif
+
+
+@if ($errors->any())
+<div class="alert alert-danger">
+<ul>
+
+@foreach($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+</ul>
+</div>
+@endif
 <div class="reg-form">
 
-<table class="table">
+<div class="container">
+<form action="{{route('admin.appointment.store')}}" method="POST">
+@csrf
 
-  <thead> 
+<div class="row">
+  <label for="name" class="form-label">Name</label>
+  <input name='name' type="text" class="form-control" id="name">
+</div>
 
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Name</th>
-      <th scope="col">PhoneNumber</th>
-      <th scope="col">Address</th>
-      <th scope="col">Time</th>
-      <th scope="col">Date</th>
-      
+<div class="row">
+  <label for="id" class="form-label">Phone Number</label>
+  <input name='phone_number' type="number" class="form-control" id="id" aria-describedby="id">
+  <div id="emailHelp" class="form-text"></div>
+</div>
 
+<div class="row">
+  <label for="details" class="form-label">Address</label>
+  <input name='address' type="text" class="form-control" id="id" aria-describedby="details">
+  <div id="details" class="form-text"></div>
+</div>
 
-      
-     
-    </tr>
-  </thead>
-  <tbody>
-   
-   @foreach($appointment as $key=>$item)
-  <tr>
-      <th>{{$key+1}}</th>
-      <td>{{$item->name}}</td>
-      <td>{{$item->phonenumber}}</td>
-      <td>{{$item->address}}</td>
-      <td>{{$item->time}}</td>
-      <td>{{$item->date}}</td>
-     
-      </tr>
-    @endforeach
+<div class="row">
+<label for="date" class="form-label">Date</label>
+  <input name='date' type="date" class="form-control" id="id" aria-describedby="date">
+  <div id="date" class="form-text"></div>
+</div>
 
+<div class="row">
+<label for="details" class="form-label">Time</label>
+  <input name='time' type="time" class="form-control" id="id" aria-describedby="details">
+  <div id="details" class="form-text"></div>
+</div>
 
-    
-  </tbody>
-</table>
+<button type="submit" class="btn btn-primary"><a href=""></a>Submit</button>
+</form>
+</div>
+
+</div>
 
 @endsection

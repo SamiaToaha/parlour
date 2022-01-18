@@ -24,11 +24,12 @@ class ServiceCategoryController extends Controller
 
         return view('admin.pages.ServiceCategory.service_category',compact('createlist'));
     }
-    public function CategoryrStore(Request $request){
+    public function CategoryStore(Request $request){
         // dd($request->all());
         Service_Category::create([
             'id'=>$request->id,
             'name'=>$request->name,
+            'category'=>$request->category,
 
 
         ]);

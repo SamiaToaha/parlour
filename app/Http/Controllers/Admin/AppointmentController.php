@@ -30,21 +30,24 @@ class AppointmentController extends Controller
     public function AppointmentStore(Request $request){
         // dd($request->all());
         Appointment::create([
-            'name'=>$request->name,
-            'phonenumber'=>$request->phone_number,
-            'address'=>$request->address,
-            'date'=>$request->date,
-            'time'=>$request->time,
+            'id'=>$request->id,
+            'customerid'=>$request->customer_id,
+            'serviceid'=>$request->service_id,
+            'servicequantity'=>$request->service_quantity,
+            'price'=>$request->price,
+            'totalprice'=>$request->total_price,
+            'status'=>$request->status,
         ]);
         return redirect()->back()->with('success','Appointment done Successfully');
     }
     public function list(){
-        return view('admin.pages.Appointments.booking_list');
-       
+       return view('admin.pages.Appointments.booking_list');
+    } 
         
-    }
-    public function appointmentDetails($customer_id)
+    
+    public function appointmentDetails($appointment_id)
     {
+        
         $appoint=appointment::find($appointment_id);
         return view('admin.pages.Appointments.details',compact('appoint'));
      }
@@ -80,6 +83,7 @@ class AppointmentController extends Controller
             $cartData = [
                 $id => [
                     'id' => $id,
+                    // 'user_id'=>
                     'name' => $createservice->name,
                     'price' => $createservice->price,
                     'item_qty' => 1,
@@ -95,10 +99,10 @@ class AppointmentController extends Controller
         if(!isset($cartExist[$id]))
         {
             $cartExist[$id] = [
-                'id'=>$id,
-                'name'=>$name,
-                'price'=>$price,
-                'type_qty' => 1,
+                'id' => $id,
+                'name' => $createservice->name,
+                'price' => $createservice->price,
+                'item_qty' => 1,
             ];
 
             session()->put('cart', $cartExist);
@@ -116,8 +120,11 @@ class AppointmentController extends Controller
         return view('website.cart',compact('carts'));
     }
 
+
+
     public function clearCart()
     {
+        dd(session()->get('cart'));
         session()->forget('cart');
         return redirect()->back()->with('message','Cart cleared successfully.');
 
