@@ -3,10 +3,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
 use App\Models\Service;
+use App\Models\Cart;
 
 class AppointmentController extends Controller
 {
@@ -31,12 +33,18 @@ class AppointmentController extends Controller
         // dd($request->all());
         Appointment::create([
             'id'=>$request->id,
-            'customerid'=>$request->customer_id,
-            'serviceid'=>$request->service_id,
-            'servicequantity'=>$request->service_quantity,
-            'price'=>$request->price,
-            'totalprice'=>$request->total_price,
-            'status'=>$request->status,
+            'name'=>$request->name,
+            'phonenumber'=>$request->phone_number,
+            'date'=>$request->date,
+            'time'=>$request->time,
+            'address'=>$request->address,
+            'user_id'=>Auth::user()->id
+            // 'customer_id'=>$request->customer_id,
+            // 'service_id'=>$request->service_id,
+            // 'service_quantity'=>$request->service_quantity,
+            // 'price'=>$request->price,
+            // 'total_price'=>$request->total_price,
+            // 'status'=>$request->status,
         ]);
         return redirect()->back()->with('success','Appointment done Successfully');
     }
@@ -47,9 +55,14 @@ class AppointmentController extends Controller
     
     public function appointmentDetails($appointment_id)
     {
-        
-        $appoint=appointment::find($appointment_id);
-        return view('admin.pages.Appointments.details',compact('appoint'));
+        // dd($appointment_id);
+        $appoint=appointment::findOrFail($appointment_id);
+        $details=Cart::where('user_id',$appoint->user_id)->get();
+        $total = 0;
+        foreach ($details as $value) {
+            $total+=$value->price;
+        }
+        return view('admin.pages.appointments.details',compact('details','total'));
      }
      public function appointmentnDelete($appointment_id)
  {
@@ -121,12 +134,22 @@ class AppointmentController extends Controller
     }
 
 
-
-    public function clearCart()
+    public function confirmCart()
     {
-        dd(session()->get('cart'));
+        // dd(auth()->user());
+        //  dd(session()->get('cart'));
+         $data = session()->get('cart');
+        //  dd($data);
+         foreach ($data as $val) {
+            Cart::create([
+                'name' => $val['name'],
+                'price' => $val['price']*$val['item_qty'],
+                'item_qty' => $val['item_qty'],
+                'user_id'=>auth()->user()->id,
+            ]);      
+         }
         session()->forget('cart');
-        return redirect()->back()->with('message','Cart cleared successfully.');
+        return redirect()->back()->with('message','Cart confirmed successfully.');
 
     }
 }

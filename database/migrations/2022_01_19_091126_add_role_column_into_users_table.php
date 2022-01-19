@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCartsTable extends Migration
+class AddRoleColumnIntoUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateCartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('carts', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->double('price');
-            $table->string('item_qty');
-            $table->string('user_id');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('role',20)->default('user');
         });
     }
 
@@ -30,6 +25,6 @@ class CreateCartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carts');
+      
     }
 }

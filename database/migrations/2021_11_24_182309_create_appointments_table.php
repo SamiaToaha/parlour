@@ -15,12 +15,14 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointmentlist', function (Blueprint $table) {
             $table->id();
-            $table->string('customer_id');
-            $table->string('service_id');
-            $table->string('service_quantity');
-            $table->string('price');
-            $table->string('total_price');
-            $table->string('status');
+            $table->string('name');
+            $table->unsignedBigInteger('user_id');
+            $table->double('phonenumber');
+            $table->string('address');
+            $table->date('date');
+            $table->time('time');
+            $table->string('total_price')->nullable();
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }

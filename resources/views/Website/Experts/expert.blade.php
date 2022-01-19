@@ -1,5 +1,18 @@
 @extends('website.master')
 @section('contents')
+
+<style>
+
+ table thead th{
+   color: white;
+   font-size: 18px;
+ }
+
+ table tbody td{
+   color: white;
+   font-size: 15px;
+ }
+</style>
 <h4>
     Service Category List
 </h4>
@@ -26,12 +39,12 @@
    
    @foreach($expert as $key=>$item)
   <tr>
-      <th>{{$key+1}}</th>
+      <td>{{$key+1}}</td>
       <td>{{$item->name}}</td>
       <td>{{$item->details}}</td>
-      <th>   
+      <td>   
         <img style="border-radius: 10px;" height="80px" width="120px;" src="{{url('storage/beautician/'.$item->image)}}" class="img-responsive" >
-      </th>
+      </td>
      
       <td>
                         <a class="btn btn-primary" href="{{route('expert.visit.show',$item->id)}}">View</a>

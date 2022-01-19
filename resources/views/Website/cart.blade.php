@@ -32,7 +32,7 @@
 
         </tbody>
     </table>
-    <a href="{{route('cart.clear')}}" class="btn btn-warning">Clear Cart</a>
+    <a href="{{route('cart.confirm')}}" class="btn btn-warning">Confirm Cart</a>
 
 
 

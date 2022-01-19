@@ -168,10 +168,12 @@ Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
 
 Route::get('/home/addtocart/{id}',[AppointmentController::class,'addtocart'])->name('cart.add');
 Route::get('/get-cart',[AppointmentController::class,'getCart'])->name('cart.get');
-Route::get('/clear-cart',[AppointmentController::class,'clearCart'])->name('cart.clear');
+Route::get('/confirm-cart',[AppointmentController::class,'confirmCart'])->name('cart.confirm');
+
 
 // ?WebAuth
-Route::group(['middleware'=>'web_auth'],function(){
+Route::group(['middleware'=>['web_auth','admin']],function(){
+   
 
 
  //Cart
