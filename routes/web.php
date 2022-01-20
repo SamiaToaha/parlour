@@ -52,6 +52,7 @@ return view('admin.welcome');
 
  Route::get('/admin/login',[AdminUserController::class,'login'])->name('admin.login');
  Route::post('/admin/do-login',[AdminUserController::class,'doLogin'])->name('admin.doLogin');
+ Route::get('/admin/logout',[AdminUserController::class,'logout'])->name('admin.logout');
 
 Route::get('/users',[UsersController::class,'profile'])->name('users.profile');
 
@@ -66,6 +67,10 @@ Route::get('/customer/details/view/{item_id}',[CustomerController::class,'custom
 Route::get('/customer/delete/{item_id}',[CustomerController::class,'customerDelete'])->name('customer.delete');
 Route::post('/customer/store',[CustomerController::class,'CustomerStore'])->name('admin.customer.store');
 
+Route::get('/view/{id}',[AppointmentController::class,'view'])->name('payment.view');
+Route::post('/add/{id}',[AppointmentController::class,'add'])->name('payment.add');
+
+
 
 // Appointment
 
@@ -75,6 +80,7 @@ Route::post('/booking/appointment',[AppointmentController::class,'AppointmentSto
 Route::get('/appointment/search',[AppointmentController::class,'appointmentSearch'])->name('appointment.search');
 Route::get('/appointment/details/{item_id}',[AppointmentController::class,'appointmentDetails'])->name('appointment.details');
 Route::get('/appointment/delete/{item_id}',[AppointmentController::class,'appointmentDelete'])->name('appointment.delete');
+Route::get('/appointment/action/{item_id}',[AppointmentController::class,'action'])->name('appointment.action');
 
 
 
@@ -134,7 +140,8 @@ Route::get('/home',[HomeController::class,'dashboard'])->name('home.dashboard');
 Route::get('/index',[IndexController::class,'dashboard'])->name('frontend.dashboard');
 
 // Customer
-Route::get('/customers',[CustomerProfileController::class,'profile'])->name('website.profile');
+Route::get('/customers',[CustomerProfileController::class,'create'])->name('website.create');
+Route::get('/profile',[CustomerProfileController::class,'profile'])->name('website.profile');
 
 // Appointment
 
@@ -163,7 +170,8 @@ Route::get('/registration',[UserController::class,'registration'])->name('user.r
 // User login
 
 Route::post('/store/user',[UserController::class,'UserStore'])->name('user.store');
-Route::post('/login',[UserController::class,'login'])->name('user.login');
+Route::get('/login',[UserController::class,'login'])->name('user.login');
+Route::post('/loggedin',[UserController::class,'loggedin'])->name('user.loggedin');
 Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
 
 Route::get('/home/addtocart/{id}',[AppointmentController::class,'addtocart'])->name('cart.add');

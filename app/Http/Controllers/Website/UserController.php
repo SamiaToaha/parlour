@@ -21,23 +21,22 @@ class UserController extends Controller
     User::create([
         'name'=>$request->name,
         'phone_number'=>$request->Phone_number,
-        'email'=>$request->email,
+        'email'=>$request->Email,
         'password'=>bcrypt($request->Password),
     ]);
     return redirect()->back()->with('success','Customer has registered successfully' );
 }
-public function login(Request $request)
-{
-    // dd($request->all());
-    $userInfo=$request->except('_token');
-//        $credentials['email']=$request->user_email;
-//        $credentials['password']=$request->user_password;
-//        dd($credentials);
-//        $credentials=$request->only('user_email','user_password');
+public function login(){
+    return 'ok';
+}
 
+public function loggedin(Request $request)
+{
+    $userInfo=$request->except('_token');
+
+// dd(Auth::attempt($userInfo));
 
     if(Auth::attempt($userInfo)){
-
         return redirect()->back()->with('message','Login successful.');
     }
     return redirect()->back()->with('error','Invalid user credentials');
@@ -48,7 +47,7 @@ public function login(Request $request)
 public function logout()
 {
     Auth::logout();
-    return redirect()->route('website')->with('message','Logging out.');
+    return redirect()->route('admin.login')->with('message','Logging out.');
 }
 }
 

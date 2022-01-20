@@ -29,10 +29,6 @@
       <th scope="col">Details</th>
       <th scope="col">Image</th>
       
-      
-
-      
-     
     </tr>
   </thead>
   <tbody>

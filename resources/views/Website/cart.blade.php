@@ -1,10 +1,23 @@
 @extends('website.master')
 @section('contents')
 
+<style>
 
+ table thead th{
+   color: white;
+   font-size: 18px;
+ }
 
+ table tbody td{
+   color: white;
+   font-size: 15px;
+ }
+</style>
+<div class="reg-form">
 
     <h1 style="padding-top: 100px;">My Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</h1>
+    
+</div>
     <table class="table">
         <thead>
         <tr>

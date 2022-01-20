@@ -33,10 +33,10 @@ class UserController extends Controller
 
 
     public function logout()
-    {
-        Auth::logout();
-        return redirect()->route('admin.login')->with('message','Logging out.');
-    }
+{
+    Auth::logout();
+    return redirect()->route('admin.login')->with('message','Logging out.');
+}
 }
 
 

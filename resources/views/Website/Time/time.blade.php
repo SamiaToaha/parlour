@@ -1,5 +1,17 @@
 @extends('website.master')
 @section('contents')
+<style>
+
+ table thead th{
+   color: white;
+   font-size: 18px;
+ }
+
+ table tbody td{
+   color: white;
+   font-size: 15px;
+ }
+</style>
 <div class="heading">
 <h1>Available Time Slot</h1>
 

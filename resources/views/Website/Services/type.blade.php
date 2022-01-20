@@ -1,6 +1,17 @@
 @extends('website.master')
 @section('contents')
+<style>
 
+ table thead th{
+   color: white;
+   font-size: 18px;
+ }
+
+ table tbody td{
+   color: white;
+   font-size: 15px;
+ }
+</style>
 
 <div class="reg-form">
 <h4>
@@ -21,7 +32,7 @@
       <th scope="col">Name</th>
       <th scope="col">Price</th>
       <th scope="col">Image</th>
-      <th></th>
+      
     </tr>
   </thead>
   <tbody>

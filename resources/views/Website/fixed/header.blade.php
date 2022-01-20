@@ -29,8 +29,18 @@
                             
                             <li id="menu-item-3215"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3215">
-                            <li><a title="Customer" href="{{route('website.profile')}}">Customer</a></li>
-                            
+                            <li><a title="Customer" href="{{route('website.create')}}">Customer</a>
+                            <ul role="menu" class="">
+
+                            <li id="menu-item-2377"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377">
+                                    @if(Auth::check())
+                                    <a title="ServiceCategory" href=" {{route('website.profile')}} ">Profile</a></li>
+                                    @endif
+                                       
+
+                            </ul>
+</li>
                         <li><a href="{{route('website.expert')}}">Beautician</a></li>
                         <li id="menu-item-1042"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a
@@ -104,7 +114,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{route('user.store')}}" method='POST'>
+            <form action="{{route('user.loggedin')}}" method='POST'>
               @csrf
               <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
@@ -115,7 +125,7 @@
 
               <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" name="Password" class="form-control" 
+                  <input type="password" name="password" class="form-control" 
                       placeholder="Password">
               </div>
             

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Appointment;
 use App\Models\Service;
 use App\Models\Cart;
+use App\Models\Payment;
 
 class AppointmentController extends Controller
 {
@@ -57,12 +58,13 @@ class AppointmentController extends Controller
     {
         // dd($appointment_id);
         $appoint=appointment::findOrFail($appointment_id);
+        
         $details=Cart::where('user_id',$appoint->user_id)->get();
         $total = 0;
         foreach ($details as $value) {
             $total+=$value->price;
         }
-        return view('admin.pages.appointments.details',compact('details','total'));
+        return view('admin.pages.appointments.details',compact('details','total','appointment_id'));
      }
      public function appointmentnDelete($appointment_id)
  {
@@ -150,6 +152,29 @@ class AppointmentController extends Controller
          }
         session()->forget('cart');
         return redirect()->back()->with('message','Cart confirmed successfully.');
+
+    }
+    public function action($id)
+    {
+        $data = Appointment::find($id);
+        $data->update([
+            'status'=>"Approve"
+        ]);
+        return redirect()->back();
+    }
+    public function view($id)
+    {
+        return view('admin.pages.appointments.view',compact('id'));
+    }
+    public function add($id)
+    {
+        Payment::create([
+            'trans_id'=>request()->trans_id,
+            'appointment_id'=>$id,
+            'mathod'=>request()->method,
+            'ammount'=>request()->ammount
+        ]);
+        return redirect()->back();
 
     }
 }

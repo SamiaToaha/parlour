@@ -9,13 +9,13 @@
         </button>
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend">
+            <div class="input-group"> 
+               <div class="input-group-prepend">
                 <span class="input-group-text" id="search">
                   <i class="icon-search"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Search Projects.." aria-label="search" aria-describedby="search">
+               <input type="text" class="form-control" placeholder="Search Projects.." aria-label="search" aria-describedby="search">
             </div>
           </li>
         </ul>
@@ -24,15 +24,14 @@
             <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
               <i class="icon-cog"></i>
             </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
-              <a class="dropdown-item preview-item">               
+             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <!-- <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p> -->
+              <!-- <a class="dropdown-item preview-item">               
                   <i class="icon-head"></i> Profile
+              </a> -->
+              <a type="button" class="dropdown-item preview-item" href="{{route('admin.logout')}}">Logout
               </a>
-              <a class="dropdown-item preview-item">
-                  <i class="icon-inbox"></i> Logout
-              </a>
-            </div>
+            </div> 
           </li>
         </ul>
         </button>

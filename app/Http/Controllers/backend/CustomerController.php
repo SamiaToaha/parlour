@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\backend\CustomerController;
@@ -16,7 +17,7 @@ class CustomerController extends Controller
            $customerlist = Customer::where('name','LIKE',"%{$key}%")->get();
            return view('admin.pages.Customers.Customer',compact('customerlist','key'));
         }
-        $customerlist = Customer::all();
+        $customerlist = User::all();
         return view('admin.pages.Customers.Customer',compact('customerlist','key'));
      }
     
