@@ -47,6 +47,6 @@
     </table>
     <a href="{{route('cart.confirm')}}" class="btn btn-warning">Confirm Cart</a>
 
-
+    
 
 @endsection

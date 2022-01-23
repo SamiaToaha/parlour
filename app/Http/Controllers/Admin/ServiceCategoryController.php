@@ -50,8 +50,20 @@ class ServiceCategoryController extends Controller
         return redirect()->back()->with('success','category Deleted.');
      }
 
-
-
+     public function categoryupdate($id)
+     {
+         $cat = Service_Category::find($id)->first();
+         return view('admin.pages.ServiceCategory.update_category',compact('cat'));
+     }
+     public function category_update($id, Request $req)
+     {
+         $cat = Service_Category::find($id)->first();
+         $cat->update([
+             
+             'category'=>$req->category
+         ]);
+         return redirect()->route('service_category.profile');
+     }
 }
     
 

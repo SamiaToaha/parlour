@@ -17,13 +17,13 @@
 <h4>
     Service Category List
 </h4>
-
+<form action="{{route('website.type')}}">
 
 <input value="{{$key}}" name="search" class="search-input" type="text" placeholder="Search" aria-label="Search">
     <button class="btn btn-success" type="submit">Search</button>
     </div>
 
-    
+</form>
     
 <table class="table">
   <thead>

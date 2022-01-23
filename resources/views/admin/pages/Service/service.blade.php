@@ -33,9 +33,9 @@
       <td>{{$item->price}}</td>
       <td><img src="{{url('/storage/service/'.$item->image)}}" alt=""></td>
       <td>
-                        <a class="btn btn-primary" href="{{route('service.view',$item->id)}}">View</a>
+                        <a class="btn btn-success" href="{{route('service.view',$item->id)}}">View</a>
                         <a class="btn btn-primary" href="{{route('service.delete',$item->id)}}">Delete</a>
-                        <a class="btn btn-primary" href="{{route('service.update',$item->id)}}">UPDATE</a>
+                        <a class="btn btn-danger" href="{{route('service.update',$item->id)}}">UPDATE</a>
 </td>
       
      

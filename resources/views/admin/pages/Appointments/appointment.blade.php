@@ -44,8 +44,8 @@
       <td>
    
                         <a class="btn btn-primary" href="{{route('appointment.details',$item->id)}}">Appointment Details</a>
-                        <a class="btn btn-primary" href="{{route('appointment.delete',$item->id)}}">Delete</a>
-                        <a class="btn btn-primary" href="{{route('appointment.action',$item->id)}}">{{$item->status}}</a>
+                        <a class="btn btn-warning" href="{{route('appointment.delete',$item->id)}}">Delete</a>
+                        <a class="btn btn-success" href="{{route('appointment.action',$item->id)}}">{{$item->status}}</a>
         
 </td>
 

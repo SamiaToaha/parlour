@@ -10,7 +10,7 @@
 
 <!-- <a href="{{route('customer_list.show')}}"><button type="button" class="btn btn-success">Add Customer</button></a> -->
 </div>
-
+<div class="reg-form">
 <table class="table">
 
   <thead> 
@@ -19,11 +19,8 @@
       <th scope="col">Name</th>
       <th scope="col">Details</th>
       <th scope="col">Action</th>
-      
-      
       <th></th>
       <th></th>
-      
      
     </tr>
   </thead>
@@ -42,14 +39,9 @@
       
     </tr>
     @endforeach
-
-
     
   </tbody>
 </table>
-
-
-
-
+</div>
 
 @endsection

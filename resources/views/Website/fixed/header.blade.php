@@ -29,8 +29,8 @@
                             
                             <li id="menu-item-3215"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3215">
-                            <li><a title="Customer" href="{{route('website.create')}}">Customer</a>
-                            <ul role="menu" class="">
+                            <li><a title="Customer" href="{{route('website.profile')}}">Customer</a>
+                            <!-- <ul role="menu" class="">
 
                             <li id="menu-item-2377"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377">
@@ -40,7 +40,7 @@
                                        
 
                             </ul>
-</li>
+</li> -->
                         <li><a href="{{route('website.expert')}}">Beautician</a></li>
                         <li id="menu-item-1042"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a
@@ -67,11 +67,12 @@
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3136 ">
                             <a href="{{route('website.time')}}">Time Slot </a>
 
-                            <li id="menu-item-3136"
+                            <!-- <li id="menu-item-3136"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3136 ">
                             <a href="{{route('website.feedback')}}">Feedback</a>
+                            </li> -->
                             <!-- <li id="menu-item-1045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1045"><a  title="Contact" href="{{route('user.registration')}}">Register</a></li> -->
-                        </li>
+                        
                         @if(auth()->user())
                         <!-- Button trigger modal -->
 

@@ -9,12 +9,13 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\ItemController;
 use App\Http\Controllers\frontend\TimeController;
+use App\Http\Controllers\Admin\ManagersController;
 use App\Http\Controllers\Admin\TimeSlotController;
-use App\Http\Controllers\frontend\HennaController;
 
 
 // website
 
+use App\Http\Controllers\frontend\HennaController;
 use App\Http\Controllers\frontend\IndexController;
 use App\Http\Controllers\frontend\ExpertController;
 use App\Http\Controllers\backend\CustomerController;
@@ -54,7 +55,7 @@ return view('admin.welcome');
  Route::post('/admin/do-login',[AdminUserController::class,'doLogin'])->name('admin.doLogin');
  Route::get('/admin/logout',[AdminUserController::class,'logout'])->name('admin.logout');
 
-Route::get('/users',[UsersController::class,'profile'])->name('users.profile');
+// Route::get('/admin',[AdminController::class,'profile'])->name('manager.profile');
 
 
 
@@ -125,11 +126,10 @@ Route::patch('/service/actual_update/{item_id}',[ServiceController::class,'servi
 Route::get('/service_category',[ServiceCategoryController::class,'showcategory'])->name('service_category.profile');
 Route::get('/category/list',[ServiceCategoryController::class,'categorylist'])->name('category.list');
 Route::post('/category/store',[ServiceCategoryController::class,'CategoryStore'])->name('category.store');
-// Route::get('/category/search',[CategoryeController::class,'categorySearch'])->name('category.search');
 Route::get('/category/details/{item_id}',[ServiceCategoryController::class,'categoryDetails'])->name('category.view');
 Route::get('/category/delete/{item_id}',[ServiceCategoryController::class,'categoryDelete'])->name('category.delete');
-
-
+Route::get('/category/update/{item_id}',[ServiceCategoryController::class,'categoryupdate'])->name('category.update');
+Route::patch('/category/real_update/{item_id}',[ServiceCategoryController::class,'category_update'])->name('category.real_update');
 // frontend
 
  Route::get('/', function () { 
@@ -140,8 +140,8 @@ Route::get('/home',[HomeController::class,'dashboard'])->name('home.dashboard');
 Route::get('/index',[IndexController::class,'dashboard'])->name('frontend.dashboard');
 
 // Customer
-Route::get('/customers',[CustomerProfileController::class,'create'])->name('website.create');
-Route::get('/profile',[CustomerProfileController::class,'profile'])->name('website.profile');
+// Route::get('/customers',[CustomerProfileController::class,'create'])->name('website.create');
+  Route::get('/profile',[CustomerProfileController::class,'profile'])->name('website.profile');
 
 // Appointment
 

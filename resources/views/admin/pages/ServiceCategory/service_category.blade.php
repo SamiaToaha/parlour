@@ -33,7 +33,8 @@
       <td>{{$item->category}}</td>
       <td>
                         <a class="btn btn-primary" href="{{route('category.view',$item->id)}}">View</a>
-                        <a class="btn btn-primary" href="{{route('category.delete',$item->id)}}">Delete</a>
+                        <a class="btn btn-danger" href="{{route('category.delete',$item->id)}}">Delete</a>
+                        <a class="btn btn-warning" href="{{route('category.update',$item->id)}}">UPDATE</a>
 </td>
     </tr>
     @endforeach

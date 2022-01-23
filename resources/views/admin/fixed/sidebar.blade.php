@@ -11,12 +11,7 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-         <li class="nav-item">
-            <a class="nav-link" href="{{route('users.profile')}}">
-              <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Users</span>
-            </a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="{{route('customer.show')}}">
               <i class="icon-box menu-icon"></i>
@@ -61,15 +56,6 @@
               <span class="menu-title">Time Slot</span>
             </a>
           </li>
-          
-
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('feedback.profile')}}">
-              <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Feedback</span>
-            </a>
-          </li>
-          
           
           
           

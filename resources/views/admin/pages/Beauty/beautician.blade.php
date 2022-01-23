@@ -21,12 +21,11 @@
       <th scope="col">Details</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
+      <th scope="col">Available</th>
      
       
       <th></th>
       <th></th>
-     
-      
      
     </tr>
   </thead>
@@ -40,8 +39,8 @@
       <td><img src="{{url('storage/beautician/'.$item->image)}}" alt=""></td>
       <td>
                         <a class="btn btn-primary" href="{{route('beautician.view',$item->id)}}">View</a>
-                        <a class="btn btn-primary" href="{{route('beautician.delete',$item->id)}}">Delete</a>
-                        <a class="btn btn-primary" href="{{route('beautician.update',$item->id)}}">UPDATE</a>
+                        <a class="btn btn-warning" href="{{route('beautician.delete',$item->id)}}">Delete</a>
+                        <a class="btn btn-danger" href="{{route('beautician.update',$item->id)}}">UPDATE</a>
 </td>
       
     </tr>

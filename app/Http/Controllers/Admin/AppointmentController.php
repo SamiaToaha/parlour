@@ -52,6 +52,13 @@ class AppointmentController extends Controller
     public function list(){
        return view('admin.pages.Appointments.booking_list');
     } 
+
+
+    public function appointmentDelete($appointment_id)
+    {
+        Appointment::find($appointment_id)->delete();
+       return redirect()->back()->with('success','appointment Deleted.');
+    }
         
     
     public function appointmentDetails($appointment_id)
@@ -122,7 +129,7 @@ class AppointmentController extends Controller
 
             session()->put('cart', $cartExist);
 
-            return redirect()->back()->with('message', 'Product Added to Cart.');
+            return redirect()->back()->with('message', 'Service Added to Cart.');
         }
 
 
@@ -134,11 +141,11 @@ class AppointmentController extends Controller
        $carts= session()->get('cart');
         return view('website.cart',compact('carts'));
     }
-
+//    
 
     public function confirmCart()
     {
-        // dd(auth()->user());
+        //  dd(auth()->user());
         //  dd(session()->get('cart'));
          $data = session()->get('cart');
         //  dd($data);
@@ -151,7 +158,7 @@ class AppointmentController extends Controller
             ]);      
          }
         session()->forget('cart');
-        return redirect()->back()->with('message','Cart confirmed successfully.');
+        return redirect()->back()->with('message','Cart confirm successfully.');
 
     }
     public function action($id)

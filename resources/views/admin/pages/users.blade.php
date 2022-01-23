@@ -1,4 +1,4 @@
-@extends('admin.welcome')
+<!-- @extends('admin.welcome')
 @section('content')
 <div class="pt-5 m-5 reg-form">
 <form  action="{{route('users.profile')}}" method='POST'>
@@ -35,4 +35,4 @@
 
 
 
-@endsection
+@endsection -->
