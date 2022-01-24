@@ -8,8 +8,8 @@ use App\Http\Controllers\frontend\FeedbacksController;
 
 class FeedbacksController extends Controller
 {
-    public function review(){
+    public function give(){
         
-    return view('Website.Feedbacks.give_feedback');
+    return view('Website.Customer Profile.feedback');
     }
 }

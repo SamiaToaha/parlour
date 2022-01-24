@@ -34,7 +34,8 @@
       <td>{{$item->details}}</td>
       <td>
                         <a class="btn btn-primary" href="{{route('customer.view',$item->id)}}">View</a>
-                        <a class="btn btn-primary" href="{{route('customer.delete',$item->id)}}">Delete</a>
+                        <a class="btn btn-success" href="{{route('customer.delete',$item->id)}}">Delete</a>
+                        <!-- <a class="btn btn-danger" href="{{route('customer.update',$item->id)}}">UPDATE</a> -->
 </td>
       
     </tr>

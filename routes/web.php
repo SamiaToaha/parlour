@@ -67,6 +67,10 @@ Route::get('/customer/search',[CustomerController::class,'customerSearch'])->nam
 Route::get('/customer/details/view/{item_id}',[CustomerController::class,'customerDetails'])->name('customer.view');
 Route::get('/customer/delete/{item_id}',[CustomerController::class,'customerDelete'])->name('customer.delete');
 Route::post('/customer/store',[CustomerController::class,'CustomerStore'])->name('admin.customer.store');
+// Route::get('/customer/update/{item_id}',[CustomerController::class,'customerupdate'])->name('customer.update');
+// Route::patch('/customer/actual_update/{item_id}',[CustomerController::class,'actual_update'])->name('customer.actual_update');
+
+
 
 Route::get('/view/{id}',[AppointmentController::class,'view'])->name('payment.view');
 Route::post('/add/{id}',[AppointmentController::class,'add'])->name('payment.add');
@@ -101,7 +105,7 @@ Route::patch('/beautician/actual_update/{item_id}',[BeauticianController::class,
 
 
 Route::get('/admin/dashboard',[DashboardController::class,'profile'])->name('admin.dashboard.profile');
-Route::get('/feedback',[FeedbackController::class,'give'])->name('feedback.profile');
+
 
 
 // Time Slot
@@ -130,6 +134,10 @@ Route::get('/category/details/{item_id}',[ServiceCategoryController::class,'cate
 Route::get('/category/delete/{item_id}',[ServiceCategoryController::class,'categoryDelete'])->name('category.delete');
 Route::get('/category/update/{item_id}',[ServiceCategoryController::class,'categoryupdate'])->name('category.update');
 Route::patch('/category/real_update/{item_id}',[ServiceCategoryController::class,'category_update'])->name('category.real_update');
+
+
+Route::get('/feedback',[FeedbackController::class,'review'])->name('admin.feedback');
+
 // frontend
 
  Route::get('/', function () { 
@@ -142,6 +150,9 @@ Route::get('/index',[IndexController::class,'dashboard'])->name('frontend.dashbo
 // Customer
 // Route::get('/customers',[CustomerProfileController::class,'create'])->name('website.create');
   Route::get('/profile',[CustomerProfileController::class,'profile'])->name('website.profile');
+  // Route::get('/customer/edit/{item_id}',[CustomerProfileController::class,'customeredit'])->name('customer.edit');
+  // Route::put('/customer/actual_edit/{item_id}',[CustomerProfileController::class,'actual_edit'])->name('customer.actual_edit');
+
 
 // Appointment
 
@@ -163,7 +174,7 @@ Route::get('/service/view/{id}',[ServiceViewController::class,'serviceView'])->n
 Route::get('/choose',[TimeController::class,'choose'])->name('website.time');
 
 // Feedback
-Route::get('/feedback/give',[FeedbacksController::class,'review'])->name('website.feedback');
+Route::get('/feedbacks',[FeedbacksController::class,'give'])->name('feedback.website');
 
 Route::get('/registration',[UserController::class,'registration'])->name('user.registration');
 

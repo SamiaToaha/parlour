@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
 {
-    public function give(){
-        return view('admin.pages.feedback');
+    public function review(){
+        return view('admin.pages.Customers.show_feedback');
     }
 }

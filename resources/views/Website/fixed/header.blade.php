@@ -5,9 +5,9 @@
                 <!-- logo begin -->
                 <div id="logo">
                     <a href="https://perfectparlour.com/">
-                        <img class="logo logo_dark_bg"
+                        <!-- <img class="logo logo_dark_bg"
                             src="https://perfectparlour.com/wp-content/uploads/2020/03/Perfect-Beauty-Logo-70.png"
-                            alt="">
+                            alt=""> -->
                         <img class="logo logo_light_bg"
                             src="https://perfectparlour.com/wp-content/uploads/2020/03/Perfect-Beauty-Logo-70.png"
                             alt="">
@@ -30,17 +30,17 @@
                             <li id="menu-item-3215"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3215">
                             <li><a title="Customer" href="{{route('website.profile')}}">Customer</a>
-                            <!-- <ul role="menu" class="">
+                            <ul role="menu" class="">
 
                             <li id="menu-item-2377"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377">
                                     @if(Auth::check())
-                                    <a title="ServiceCategory" href=" {{route('website.profile')}} ">Profile</a></li>
+                                    <a title="Feedback" href=" {{route('feedback.website')}} ">Give Feedback</a></li>
                                     @endif
                                        
 
                             </ul>
-</li> -->
+</li>
                         <li><a href="{{route('website.expert')}}">Beautician</a></li>
                         <li id="menu-item-1042"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a
@@ -69,9 +69,9 @@
 
                             <!-- <li id="menu-item-3136"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3136 ">
-                            <a href="{{route('website.feedback')}}">Feedback</a>
+                            <a href="{{route('feedback.website')}}">Feedback</a>
                             </li> -->
-                            <!-- <li id="menu-item-1045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1045"><a  title="Contact" href="{{route('user.registration')}}">Register</a></li> -->
+                            <li id="menu-item-1045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1045"><a  title="Contact" href="{{route('user.registration')}}">Register</a></li>
                         
                         @if(auth()->user())
                         <!-- Button trigger modal -->

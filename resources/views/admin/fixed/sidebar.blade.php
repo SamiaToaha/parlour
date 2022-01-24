@@ -17,7 +17,26 @@
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Customer</span>
             </a>
+         
+          
+          <ul role="menu" class="">
+                                    
+                                    @if(Auth::check())
+                                    
+                                    <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.feedback')}}">
+              <i class="icon-box menu-icon"></i>
+              <span class="menu-title">Show Feedback</span>
+            </a>
           </li>
+</ul>
+</li>
+                                    <!-- <a title="Feedback" href=" {{route('admin.feedback')}} ">Show Feedback</a> -->
+                                    @endif
+                                    <!-- </ul>
+</li> -->
+                                
+                                    
 
           <li class="nav-item">
             <a class="nav-link" href="{{route('appointment.profile')}}">

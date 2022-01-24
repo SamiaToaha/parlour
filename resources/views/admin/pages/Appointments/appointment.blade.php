@@ -2,6 +2,20 @@
 @section('content')
 <div class="heading">
 <h1>Appointment list</h1>
+<div class="reg-form">
+<div class="container" style="display:flex;">
+            <div class="form-group col-4">
+              <label for="fromdate" style="font-size:20px;"><b>From</label></b>
+              <input type="date" class="form-control" id="fromdate" name="fromdate" placeholder="From">
+            </div>
+
+            <div class="form-group col-4">
+                <label for="todate" style="font-size:20px;"><b>To</label></b>
+                <input type="date" class="form-control" id="todate" name="todate" placeholder="To">
+            </div>
+            </div>
+            </div>
+
 
 <form action="{{route('appointment.profile')}}" method="GET">
 <input value="{{$key}}" name="search" class="search-input" type="text" placeholder="Search" aria-label="Search">
@@ -32,7 +46,7 @@
     </tr>
   </thead>
   <tbody>
-   
+ 
    @foreach($bookinglist as $key=>$item)
   <tr>
       <th>{{$key+1}}</th>
@@ -52,7 +66,7 @@
       </tr>
     @endforeach
 
-
+  
     
   </tbody>
 </table>
