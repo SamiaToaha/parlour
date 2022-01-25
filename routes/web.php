@@ -150,8 +150,8 @@ Route::get('/index',[IndexController::class,'dashboard'])->name('frontend.dashbo
 // Customer
 // Route::get('/customers',[CustomerProfileController::class,'create'])->name('website.create');
   Route::get('/profile',[CustomerProfileController::class,'profile'])->name('website.profile');
-  // Route::get('/customer/edit/{item_id}',[CustomerProfileController::class,'customeredit'])->name('customer.edit');
-  // Route::put('/customer/actual_edit/{item_id}',[CustomerProfileController::class,'actual_edit'])->name('customer.actual_edit');
+  Route::get('/customer/edit/',[CustomerProfileController::class,'update'])->name('customer.update');
+  Route::put('/customer/actual_update/',[CustomerProfileController::class,'actual_update'])->name('customer.actual_update');
 
 
 // Appointment

@@ -18,6 +18,7 @@ class CreateBeauticiansTable extends Migration
             $table->string('name');
             $table->string('details');
             $table->string('image')->nullable();
+            $table->string('available');
             $table->timestamps();
         });
     }

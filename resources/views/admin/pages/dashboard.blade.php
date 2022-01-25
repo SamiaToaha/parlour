@@ -1,5 +1,6 @@
 @extends('admin.welcome')
 @section('content')
+<h1> DASHBOARD</h1>
 <link href="{{url('css/dashboard.css')}}" rel="stylesheet">
 <div class="container">
     <div class="row">

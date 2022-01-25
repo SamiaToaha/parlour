@@ -37,6 +37,7 @@ public function BeauticianStore(Request $request){
         'name'=>$request->name,
         'details'=>$request->details,
         'image'=> $image_name,
+        'available'=>$request->available,
 
 
     ]);

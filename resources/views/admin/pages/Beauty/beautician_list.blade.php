@@ -47,6 +47,11 @@
     <input name='image' type="file" class="form-control" id="id" aria-describedby="details">
     <div id="details" class="form-text"></div>
   </div>
+  <div class="mb-3">
+    <label for="available" class="form-label">Available</label>
+    <input name='available' type="text" class="form-control" id="id" aria-describedby="available">
+    <div id="available" class="form-text"></div>
+  </div>
  <button type="submit" class="btn btn-primary"><a href=""></a>Submit</button>
 </form>
 @endsection

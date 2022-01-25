@@ -50,7 +50,7 @@
                             href="{{route('cart.get')}}">Cart({{session()->has('cart') ? count(session()->get('cart')):0}})</a></li>
                         <li id="menu-item-1209"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1209 ">
-                            <a title="Our Services" href="{{route('website.type')}}">Services </a>
+                            <a title="Our Services" href="{{route('website.type')}}">Services</a>
                             <ul role="menu" class="">
 
                             <li id="menu-item-2377"
@@ -59,7 +59,18 @@
                            
                                        
 
+                          
+                             
+
+                            <li id="menu-item-2377"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377"><a
+                                        title="ServiceCategory" href=" # ">Packages</a></li>
+                           
+                                       
+
+                           
                             </ul>
+                        </li>
                         </li>
                         <!-- <li id="menu-item-1037" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1037"><a  title="Packages" href="https://perfectparlour.com/packages/">Packages</a></li> -->
 

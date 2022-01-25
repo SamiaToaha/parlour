@@ -15,9 +15,12 @@
 
   <thead> 
     <tr>
-      <th scope="col">ID</th>
+     
       <th scope="col">Name</th>
-      <th scope="col">Details</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">Password</th>
       <th scope="col">Action</th>
       <th></th>
       <th></th>

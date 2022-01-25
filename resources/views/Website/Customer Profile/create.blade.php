@@ -61,9 +61,9 @@ body{
           <!-- Breadcrumb -->
           <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li>
               <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
-              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li> -->
             </ol>
           </nav>
           <!-- /Breadcrumb -->
@@ -90,11 +90,13 @@ body{
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Full Name</h6>
+                      <h6 class="mb-0">Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                       {{auth()->user()->name}}
                     </div>
+
+                   
 
                   </div>
                   <hr>
@@ -112,19 +114,10 @@ body{
                       <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    {{auth()->user()->mobile}}
+                    {{auth()->user()->phone_number}}
                     </div>
                   </div>
                   <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{auth()->user()->mobile}}
-                    </div>
-                  </div> 
-                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Address</h6>
@@ -132,11 +125,20 @@ body{
                     <div class="col-sm-9 text-secondary">
                     {{auth()->user()->address}}
                     </div>
-                  </div>
+                  </div> 
+                   <!-- <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Password</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{auth()->user()->password}}
+                    </div>
+                  </div> -->
                   <hr> 
                   <div class="row">
                     <div class="col-sm-12">
-                    <a class="btn btn-danger" href="#">Edit</a>
+                    <a class="btn btn-danger" href="{{route('customer.update')}}">Update</a>
                     </div>
                   </div>
                 </div>

@@ -24,10 +24,11 @@
   <thead> 
 
     <tr>
-      <th scope="col">No</th>
+      <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Details</th>
       <th scope="col">Image</th>
+      <th scope="col">Available</th>
       
     </tr>
   </thead>
@@ -38,6 +39,7 @@
       <td>{{$key+1}}</td>
       <td>{{$item->name}}</td>
       <td>{{$item->details}}</td>
+      <td>{{$item->available}}</td>
       <td>   
         <img style="border-radius: 10px;" height="80px" width="120px;" src="{{url('storage/beautician/'.$item->image)}}" class="img-responsive" >
       </td>

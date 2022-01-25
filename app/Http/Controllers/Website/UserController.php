@@ -22,6 +22,7 @@ class UserController extends Controller
         'name'=>$request->name,
         'phone_number'=>$request->Phone_number,
         'email'=>$request->Email,
+        'address'=>$request->address,
         'password'=>bcrypt($request->Password),
     ]);
     return redirect()->back()->with('success','Customer has registered successfully' );
