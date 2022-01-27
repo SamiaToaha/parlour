@@ -70,6 +70,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('check.report')}}">
+              <i class="icon-box menu-icon"></i>
+              <span class="menu-title">Report</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('timeslot.profile')}}">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Time Slot</span>

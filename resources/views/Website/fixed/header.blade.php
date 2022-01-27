@@ -44,7 +44,15 @@
                         <li><a href="{{route('website.expert')}}">Beautician</a></li>
                         <li id="menu-item-1042"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a
-                            href="{{route('website.booking')}}">Appointment</a></li>
+                            href="{{route('website.booking')}}">Appointment</a>
+                            <ul role="menu" class="">
+                            <li id="menu-item-2377"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377"><a
+                                        title="View Appointment" href="{{ route('appoint.view')}}">View Appointment</a></li>
+
+                        
+                         </ul>
+                        </li>
                             <li id="menu-item-1042"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a
                             href="{{route('cart.get')}}">Cart({{session()->has('cart') ? count(session()->get('cart')):0}})</a></li>
@@ -140,7 +148,10 @@
                   <input type="password" name="password" class="form-control" 
                       placeholder="Password">
               </div>
-            
+
+              <div class="form-group">
+              <p>Forgot your password?<a href="{{route('forget.password.get')}}">Click Here</a></p>
+              </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -26,7 +26,9 @@ class CustomerController extends Controller
             Customer::create([
                 'id'=>$request->id,
                 'name'=>$request->name,
-                'details'=>$request->details    
+                'email'=>$request->email,
+                'phone_number'=>$request->phone_number,
+                'address'=>$request->address,    
     
             ]);
             return redirect()->back()->with('success','Customer added Successfully');

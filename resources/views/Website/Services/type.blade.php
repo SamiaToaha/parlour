@@ -24,8 +24,9 @@
     </div>
 
 </form>
-    
+<div id="PrintTableArea">
 <table class="table">
+
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -50,5 +51,15 @@
 
   </tbody>
 </table>
+<a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 
 @endsection

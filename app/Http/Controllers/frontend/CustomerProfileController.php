@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\frontend;
 use App\Models\User;
-use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\frontend\CustomerProfileController;

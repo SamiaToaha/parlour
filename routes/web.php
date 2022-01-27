@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Website\UserController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -11,11 +10,12 @@ use App\Http\Controllers\frontend\ItemController;
 use App\Http\Controllers\frontend\TimeController;
 use App\Http\Controllers\Admin\ManagersController;
 use App\Http\Controllers\Admin\TimeSlotController;
+use App\Http\Controllers\backend\ReportController;
 
 
 // website
 
-use App\Http\Controllers\frontend\HennaController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\frontend\IndexController;
 use App\Http\Controllers\frontend\ExpertController;
 use App\Http\Controllers\backend\CustomerController;
@@ -137,6 +137,8 @@ Route::patch('/category/real_update/{item_id}',[ServiceCategoryController::class
 
 
 Route::get('/feedback',[FeedbackController::class,'review'])->name('admin.feedback');
+Route::get('/report',[ReportController::class,'reportList'])->name('check.report');
+
 
 // frontend
 
@@ -157,6 +159,7 @@ Route::get('/index',[IndexController::class,'dashboard'])->name('frontend.dashbo
 // Appointment
 
 Route::get('/check',[BookingController::class,'appointment'])->name('website.booking');
+Route::get('/appoint',[BookingController::class,'view'])->name('appoint.view');
 
 // Service Category
 Route::get('/item',[ItemController::class, 'viewCategory'])->name('Website.service_category');
@@ -175,6 +178,7 @@ Route::get('/choose',[TimeController::class,'choose'])->name('website.time');
 
 // Feedback
 Route::get('/feedbacks',[FeedbacksController::class,'give'])->name('feedback.website');
+Route::post('/store',[FeedbacksController::class,'feedbackStore'])->name('feedback.store');
 
 Route::get('/registration',[UserController::class,'registration'])->name('user.registration');
 
@@ -203,3 +207,7 @@ Route::group(['middleware'=>['web_auth','admin']],function(){
 
 
 });
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');

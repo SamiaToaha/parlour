@@ -1,4 +1,4 @@
-@extends('admin.welcome')
+<!-- @extends('admin.welcome')
 @section('content')
 
 <h1>Customer list</h1>
@@ -41,7 +41,7 @@
   <div id="emailHelp" class="form-text"></div>
 </div>
 <div class="row">
-  <label for="details" class="form-label">Details</label>
+  <label for="details" class="form-label">Phone Num</label>
   <input name='details' type="text" class="form-control" id="id" aria-describedby="details">
   <div id="details" class="form-text"></div>
 </div>
@@ -50,4 +50,4 @@
 </form>
 </div>
 
-@endsection
+@endsection -->

@@ -27,8 +27,8 @@
       <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Details</th>
-      <th scope="col">Image</th>
       <th scope="col">Available</th>
+      <th scope="col">Image</th>
       
     </tr>
   </thead>

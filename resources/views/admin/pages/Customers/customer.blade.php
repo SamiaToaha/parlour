@@ -8,21 +8,22 @@
     <button class="btn btn-success" type="submit">Search</button>
     </form>
 
-<!-- <a href="{{route('customer_list.show')}}"><button type="button" class="btn btn-success">Add Customer</button></a> -->
+
 </div>
 <div class="reg-form">
 <table class="table">
 
   <thead> 
     <tr>
-     
+      <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Address</th>
-      <th scope="col">Password</th>
       <th scope="col">Action</th>
-      <th></th>
+     
+      
+      
       <th></th>
      
     </tr>
@@ -34,7 +35,10 @@
       <th>{{$key+1}}</th>
       <td>{{$item->id}}</td>
       <td>{{$item->name}}</td>
-      <td>{{$item->details}}</td>
+      <td>{{$item->email}}</td>
+      <td>{{$item->phone}}</td>
+      <td>{{$item->address}}</td>
+
       <td>
                         <a class="btn btn-primary" href="{{route('customer.view',$item->id)}}">View</a>
                         <a class="btn btn-success" href="{{route('customer.delete',$item->id)}}">Delete</a>
