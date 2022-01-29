@@ -8,7 +8,8 @@ use App\Http\Controllers\Admin\PackageController;
 
 class PackageController extends Controller
 {
-    public function offer(){
-        return view('admin.pages.package');
+    public function create(){
+        return view('admin.pages.Package.package');
     }
+    
 }

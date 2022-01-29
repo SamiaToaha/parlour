@@ -23,8 +23,11 @@
                 <nav>
 
                     <ul id="mainmenu" class="primary">
+                        
                         <li id="menu-item-3215"
+                       
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3215">
+                            
                             <a title="Home" href="{{route('home.dashboard')}}">Home</a></li>
                             
                             <li id="menu-item-3215"

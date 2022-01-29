@@ -64,7 +64,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('package.profile')}}">
+            <a class="nav-link" href="{{route('create.package')}}">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Packages</span>
             </a>

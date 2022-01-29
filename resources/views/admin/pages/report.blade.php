@@ -13,9 +13,12 @@
       <label for="date">To Date:</label>
       <input type="date" class="form-control" id="todate" placeholder="To Date" name="todate">
     </div>
-    <div class="form-group">
-        
-    </div>
+    <!-- <div class="form-group">
+        <select class="form-select" aria-label="Default select example" name="status" id="status">
+          <option value="Pending">Pending</option>
+          <option value="Approve">Approve</option>
+        </select>
+    </div> -->
     <button type="submit" class="btn btn-default">Search</button>
   </form>
   

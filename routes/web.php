@@ -89,8 +89,6 @@ Route::get('/appointment/action/{item_id}',[AppointmentController::class,'action
 
 
 
-Route::get('/package',[PackageController::class,'offer'])->name(('package.profile'));
-
 
 // Beautician
 
@@ -135,8 +133,14 @@ Route::get('/category/delete/{item_id}',[ServiceCategoryController::class,'categ
 Route::get('/category/update/{item_id}',[ServiceCategoryController::class,'categoryupdate'])->name('category.update');
 Route::patch('/category/real_update/{item_id}',[ServiceCategoryController::class,'category_update'])->name('category.real_update');
 
+// Package// Admin
+Route::get('/package',[PackageController::class,'create'])->name('create.package');
+Route::get('/package/list',[PackageController::class,'packagelist'])->name('package.list');
+Route::post('/package/store',[PackageController::class,'packageStore'])->name('package.store');
+
 
 Route::get('/feedback',[FeedbackController::class,'review'])->name('admin.feedback');
+// Report
 Route::get('/report',[ReportController::class,'reportList'])->name('check.report');
 
 
@@ -172,6 +176,9 @@ Route::get('/expert/visit/{id}',[ExpertViewController::class,'expertview'])->nam
 // Services
 Route::get('/show',[ServicesController::class,'type'])->name('website.type');
 Route::get('/service/view/{id}',[ServiceViewController::class,'serviceView'])->name('service.show');
+
+// Package// website
+// Route::get('/package',[PackageController::class,'offer'])->name(('package.profile'));
 
 // Time
 Route::get('/choose',[TimeController::class,'choose'])->name('website.time');
