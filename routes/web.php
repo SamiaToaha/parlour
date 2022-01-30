@@ -86,7 +86,7 @@ Route::get('/appointment/search',[AppointmentController::class,'appointmentSearc
 Route::get('/appointment/details/{item_id}',[AppointmentController::class,'appointmentDetails'])->name('appointment.details');
 Route::get('/appointment/delete/{item_id}',[AppointmentController::class,'appointmentDelete'])->name('appointment.delete');
 Route::get('/appointment/action/{item_id}',[AppointmentController::class,'action'])->name('appointment.action');
-
+Route::get('/payment/action/{item_id}',[AppointmentController::class,'payment'])->name('payment.action');
 
 
 

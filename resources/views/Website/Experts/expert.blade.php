@@ -26,6 +26,7 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
+      <th scope="col">Service</th>
       <th scope="col">Details</th>
       <th scope="col">Available</th>
       <th scope="col">Image</th>
@@ -37,7 +38,9 @@
    @foreach($expert as $key=>$item)
   <tr>
       <td>{{$key+1}}</td>
+      <td>{{$item->id}}</td>
       <td>{{$item->name}}</td>
+      
       <td>{{$item->details}}</td>
       <td>{{$item->available}}</td>
       <td>   

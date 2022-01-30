@@ -28,8 +28,8 @@ class ServiceCategoryController extends Controller
         // dd($request->all());
         Service_Category::create([
             'id'=>$request->id,
-            'name'=>$request->name,
             'category'=>$request->category,
+            'service_name'=>$request->service_name,
 
 
         ]);

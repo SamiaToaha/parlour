@@ -18,6 +18,7 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
+      <th scope="col">Service</th>
       <th scope="col">Details</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
@@ -35,6 +36,7 @@
   <tr>
       <th>{{$key+1}}</th>
       <td>{{$item->name}}</td>
+      <td>{{$item->service->name}}</td>
       <td>{{$item->details}}</td>
       <td>{{$item->available}}</td>
       <td><img src="{{url('storage/beautician/'.$item->image)}}" alt=""></td>

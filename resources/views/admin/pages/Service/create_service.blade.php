@@ -33,8 +33,8 @@
   </div>
 
   <div class="mb-3">
-    <label for="id" class="form-label">Id</label>
-    <input name='id' type="number" class="form-control" id="id" aria-describedby="emailHelp">
+    <label for="id" class="form-label">Description</label>
+    <input name='description' type="text" class="form-control" id="id" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text"></div>
   </div>
   <div class="mb-3">
@@ -49,15 +49,13 @@
   </div>
 
   <div class="form-group">
-    <label for="category" style="font-size:20px;"><b>Select Service Category</label></b>
+    <label for="category" style="font-size:20px;"><b>Select Category</label></b>
     <select name="category" class="form-control">
-      <option>Select Service Category</option>
+      <option>Select Category</option>
      
 
       @foreach ($list as $item)
-
-
-      <option value="{{$item->id}}">{{$item->name}}</option>
+      <option value="{{$item->id}}">{{$item->category}}</option>
       @endforeach
     </select>
     </div>

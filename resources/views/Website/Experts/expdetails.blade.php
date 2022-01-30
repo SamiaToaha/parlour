@@ -18,7 +18,7 @@
     <h5 class="card-title">Beautician Details</h5>
     <img style="border-radius: 4px;" width="500px;" src=" {{url('storage/beautician/'.$exp->image)}}" alt="beautician">
        <p class="card-text" >Beautician Name: {{$exp->name}}</p>
-        <p class="card-text" >Beautician Id: {{$exp->id}}</p>
+        <p class="card-text" >Beautician Provides: {{$exp->services}}</p>
         <p class="card-text" >Beautician Details: {{$exp->details}}</p>
 
 

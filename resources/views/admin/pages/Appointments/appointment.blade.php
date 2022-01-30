@@ -23,20 +23,22 @@
     </form>
 
 <!-- <a href="{{route('appointment.list')}}"><button type="button" class="btn btn-success">Booking Appointment</button></a> -->
-<a href="{{route('appointment.list')}}"><button type="button" class="btn btn-success">Payment</button></a>
+
 </div>
 <table class="table">
 
   <thead> 
 
     <tr>
-      <th scope="col">No</th>
+      <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">PhoneNumber</th>
       <th scope="col">Address</th>
       <th scope="col">Time</th>
       <th scope="col">Date</th>
+      <th scope="col">SelectBeautician</th>
       <th scope="col">Action</th>
+      <th scope="col">Payment Status</th>
       
 
       <th></th>
@@ -55,13 +57,22 @@
       <td>{{$item->address}}</td>
       <td>{{$item->time}}</td>
       <td>{{$item->date}}</td>
+      <td>{{$item->selectbeautician}}</td>
       <td>
    
                         <a class="btn btn-primary" href="{{route('appointment.details',$item->id)}}">Appointment Details</a>
-                        <a class="btn btn-warning" href="{{route('appointment.delete',$item->id)}}">Delete</a>
+                        <!-- <a class="btn btn-warning" href="{{route('appointment.delete',$item->id)}}">Delete</a> -->
                         <a class="btn btn-success" href="{{route('appointment.action',$item->id)}}">{{$item->status}}</a>
-        
-</td>
+                       
+
+                        <a href="{{route('payment.view',$item->id)}}">{{$item->appointment_id}}<button type="button" class="btn btn-danger">Payment</a>
+                       
+                        </td>
+                        <td>
+                        @if($item->status != 'Pending')
+                        <a class="btn btn-success" href="#">Approved</a>
+                        @endif
+                        </td>
 
       </tr>
     @endforeach

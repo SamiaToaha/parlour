@@ -19,6 +19,7 @@ class CreateBeauticiansTable extends Migration
             $table->string('details');
             $table->string('image')->nullable();
             $table->string('available');
+            $table->string('service_name');
             $table->timestamps();
         });
     }

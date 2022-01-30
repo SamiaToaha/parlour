@@ -39,7 +39,9 @@ class AppointmentController extends Controller
             'date'=>$request->date,
             'time'=>$request->time,
             'address'=>$request->address,
-            'user_id'=>Auth::user()->id
+            'select_beautician'=>$request->select_beautician,
+            'user_id'=>Auth::user()->id,
+           
             // 'customer_id'=>$request->customer_id,
             // 'service_id'=>$request->service_id,
             // 'service_quantity'=>$request->service_quantity,
@@ -164,9 +166,11 @@ class AppointmentController extends Controller
     public function action($id)
     {
         $data = Appointment::find($id);
+        if($data->status !='Paid'){
         $data->update([
             'status'=>"Approve"
         ]);
+    }
         return redirect()->back();
     }
     public function view($id)
@@ -176,12 +180,24 @@ class AppointmentController extends Controller
     public function add($id)
     {
         Payment::create([
-            'trans_id'=>request()->trans_id,
             'appointment_id'=>$id,
-            'mathod'=>request()->method,
-            'ammount'=>request()->ammount
+            'total_amount'=>request()->total_amount
+        ]);
+        $pay =Appointment::find($id);
+        $pay->update([
+            'status'=>"Paid"
         ]);
         return redirect()->back();
 
+    }
+
+
+    public function payment($appointment_id)
+    {
+        $pay =Appointment::find($appointment_id);
+        $pay->update([
+            'status'=>"Paid"
+        ]);
+        return redirect()->back();
     }
 }

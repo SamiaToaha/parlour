@@ -16,8 +16,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">ID</th>
       <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
       <th scope="col">Price</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
@@ -28,8 +29,9 @@
   <tbody>
    @foreach($createservice as $item)
     <tr>
-      <th>{{$item->id}}</th>
       <td>{{$item->name}}</td>
+      <td>{{$item->category->category}}</td>
+      <td>{{$item->description}}</td>
       <td>{{$item->price}}</td>
       <td><img src="{{url('/storage/service/'.$item->image)}}" alt=""></td>
       <td>

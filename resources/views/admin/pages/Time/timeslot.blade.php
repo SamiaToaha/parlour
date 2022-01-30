@@ -12,7 +12,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Name</th>
+      <th scope="col">Service Name</th>
       <th scope="col">Starting Time</th>
       <th scope="col">Ending Time</th>
      

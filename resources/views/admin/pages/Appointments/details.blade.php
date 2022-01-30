@@ -41,7 +41,7 @@
 
 </table>
 <h5>Total Price: <strong>{{$total}}</strong></h5>
-<a href="{{route('payment.view',$appointment_id)}}">Payment</a>
+<!-- <a href="{{route('payment.view',$appointment_id)}}">Payment</a> -->
 
 
 

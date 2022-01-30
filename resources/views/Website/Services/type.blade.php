@@ -19,8 +19,7 @@
 </h4>
 <form action="{{route('website.type')}}">
 
-<input value="{{$key}}" name="search" class="search-input" type="text" placeholder="Search" aria-label="Search">
-    <button class="btn btn-success" type="submit">Search</button>
+
     </div>
 
 </form>
@@ -29,10 +28,12 @@
 
   <thead>
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">Id</th>
       <th scope="col">Name</th>
+      <th scope="col">Description</th>
       <th scope="col">Price</th>
       <th scope="col">Image</th>
+     
       
     </tr>
   </thead>
@@ -41,6 +42,7 @@
     <tr>
     <th>{{$key+1}}</th>
       <td>{{$item->name}}</td>
+      <td>{{$item->description}}</td>
       <td>{{$item->price}}</td>
       <td><img style="border-radius: 4px;" width="100px;" src=" {{url('storage/service/'.$item->image)}}" alt="beautician"></td>
       

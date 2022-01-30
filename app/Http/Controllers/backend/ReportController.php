@@ -16,9 +16,9 @@ class ReportController extends Controller
             {
                 $from_date=request()->fromdate;
                 $to_date=request()->todate;
-                // $appoinment=request()->status;
-                $reports=Appointment::where('status','Approve')->whereDate('created_at','>=',$from_date)->whereDate('created_at','>=',$to_date)->get();
-                // dd($reports);
+                $appoinment=request()->status;
+                $reports=Appointment::where('status',$appoinment)->whereDate('created_at','>=',$from_date)->whereDate('created_at','>=',$to_date)->get();
+                return view('admin.pages.report',compact('reports'));
             }
             return view('admin.pages.report',compact('reports'));
         }

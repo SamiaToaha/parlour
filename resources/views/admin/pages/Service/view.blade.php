@@ -7,7 +7,7 @@
     <img style="border-radius: 4px;" width="500px;" src=" {{url('/storage/service/'.$type->image)}}" alt="service">
     
         <p class="card-text" >Service Name: {{$type->name}}</p>
-        <p class="card-text" >Service Id: {{$type->id}}</p>
+        <p class="card-text" >Service Description: {{$type->description}}</p>
         <p class="card-text" >Service Price: {{$type->price}}</p>
        
         </div>

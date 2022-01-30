@@ -6,12 +6,13 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\Service_Category;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Admin\ServiceController;
+
 
 class ServiceController extends Controller
 {
     public function view(){
         $createservice = Service::all();
+        // dd($createservice);
         
         $key =null;
         if(request()->search){
@@ -34,11 +35,12 @@ class ServiceController extends Controller
     }
 
         Service::create([
-            'id'=>$request->id,
             'name'=>$request->name,
+            'description'=>$request->description,
             'price'=>$request->price,
             'image'=> $image_name,
             'category_id'=>$request->category,
+            
 
 
         ]);
@@ -47,6 +49,7 @@ class ServiceController extends Controller
   
     public function create(){
         $list=Service_Category::all();
+
         return view('admin.pages.Service.create_service',compact('list'));
        
 }

@@ -21,8 +21,11 @@ class CreateAppointmentsTable extends Migration
             $table->string('address');
             $table->date('date');
             $table->time('time');
+            $table->string('select_beautician');
             $table->string('total_price')->nullable();
             $table->string('status')->default('Pending');
+            $table->string('payment_status')->default('Pending');
+           
             $table->timestamps();
         });
     }

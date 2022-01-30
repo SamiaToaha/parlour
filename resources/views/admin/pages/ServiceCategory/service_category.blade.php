@@ -15,8 +15,8 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Name</th>
       <th scope="col">Category</th>
+      <th scope="col">Service Name</th>
       <th scope="col">Action</th>
       <th scope="col"></th>
      
@@ -29,8 +29,8 @@
    @foreach($createlist as $item)
     <tr>
       <th>{{$item->id}}</th>
-      <td>{{$item->name}}</td>
       <td>{{$item->category}}</td>
+      <td>{{$item->service_name}}</td>
       <td>
                         <a class="btn btn-primary" href="{{route('category.view',$item->id)}}">View</a>
                         <a class="btn btn-danger" href="{{route('category.delete',$item->id)}}">Delete</a>

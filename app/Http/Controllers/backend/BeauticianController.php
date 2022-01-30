@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Beautician;
+use App\Models\Service;
 
 class BeauticianController extends Controller
 {
@@ -38,6 +39,7 @@ public function BeauticianStore(Request $request){
         'details'=>$request->details,
         'image'=> $image_name,
         'available'=>$request->available,
+        'service_name'=>$request->service,
 
 
     ]);
@@ -51,9 +53,9 @@ public function BeauticianStore(Request $request){
 
     return redirect()->back()->with('success','Add Beautician Successfully');
 }
-public function add()
-{
-    return view('admin.pages.Beauty.beautician_list');
+public function add(){
+    $list=Service::all();
+    return view('admin.pages.Beauty.beautician_list',compact('list'));
 }
 
 

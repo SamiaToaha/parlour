@@ -51,6 +51,20 @@
     <label for="available" class="form-label">Available</label>
     <input name='available' type="text" class="form-control" id="id" aria-describedby="available">
     <div id="available" class="form-text"></div>
+
+    <div class="form-group">
+    <label for="service" style="font-size:20px;"><b>Provides Service</label></b>
+    <select name="service" class="form-control">
+      <option>Provides Service</option>
+     
+
+      @foreach ($list as $item)
+
+
+      <option value="{{$item->id}}">{{$item->name}}</option>
+      @endforeach
+    </select>
+    </div>
   </div>
  <button type="submit" class="btn btn-primary"><a href=""></a>Submit</button>
 </form>
