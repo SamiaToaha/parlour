@@ -659,7 +659,7 @@ h6 { }
 </style><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1581615739902{margin-top: 5px !important;}</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>    
 </head>
 
-<body data-rsssl=1 class="page-template page-template-page-templates page-template-template-fullwidth page-template-page-templatestemplate-fullwidth-php page page-id-172 modis-theme-ver-1.2.3 wordpress-version-5.4.8 wpb-js-composer js-comp-ver-6.1 vc_responsive">    
+<body data-rsssl=1 class="page-template page-template-page-templates page-template-template-fullwidth page-template-page-templatestemplate-fullwidth-php page page-id-172 modis-theme-ver-1.2.3 wordpress-version-5.4.8 wpb-js-composer js-comp-ver-6.1 vc_responsive" style="background: rgb(204, 102, 255);">    
 
    <div id="wrapper">
  @include('website.fixed.header')

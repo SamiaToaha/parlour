@@ -1,21 +1,24 @@
-<footer>
+<footer style="margin-top: 150px;">
 
 <div class="main-footer">
 <div class="container">
-<div class="row">
+
+
+<p style="text-align: center; font-size: 20px;"><span>&copy;</span> copyright by Samia</p>
+<!-- <div class="row">
     
 
 <div class="col-md-4">
-<!-- <div id="custom_html-2" class="widget_text widget footer-widget widget_custom_html"><h3>Connect With Us!</h3><div class="textwidget custom-html-widget"><address>
+<div id="custom_html-2" class="widget_text widget footer-widget widget_custom_html"><h3>Connect With Us!</h3><div class="textwidget custom-html-widget"><address>
 <span>House - 39 (2nd Floor), Sector - 03</span>
 <span>Rabindra Sarani, Uttara, Dhaka, Bangladesh</span>
 <span><strong>Mobile:</strong>+880 1613-329132</span>
 <span><strong>Email:</strong><a href="mailto:wahidakakoli@gmail.com">wahidakakoli@gmail.com</a></span>
 <span><strong>Email:</strong><a href="mailto:info@perfectparlour.com">info@perfectparlour.com</a></span>
 <span><strong>Web:</strong><a href="https://perfectparlour.com/">https://perfectparlour.com/</a></span>
-</address></div></div>	</div>end col-lg-3 -->
+</address></div></div>	</div>end col-lg-3
 
-<!-- <div class="col-md-4">
+<div class="col-md-4">
 <div id="text-2" class="widget footer-widget widget_text"><h3>Our Opening Hours!</h3>			<div class="textwidget"><div class="box-border double">
 <ul class="list-border-bottom">
 <li>
@@ -30,29 +33,27 @@
 </li>
 </ul>
 </div></div>
-</div>	</div>end col-lg-3 -->
+</div>	</div>end col-lg-3
 
 <div class="col-md-4">
-<!-- <div id="text-3" class="widget footer-widget widget_text"><h3>Connect With Us!</h3>			<div class="textwidget"><address>
+<div id="text-3" class="widget footer-widget widget_text"><h3>Connect With Us!</h3>			<div class="textwidget"><address>
 <span>Shop - 8, 9 & 10(1st Floor),</span>
 <span>Rajuk Commercial Complex, Ajampur, Uttara, Dhaka </span>
 <span><strong>Mobile:</strong>+880 1613-329132</span>
 <span><strong>Email:</strong><a href="mailto:wahidakakoli@gmail.com">wahidakakoli@gmail.com</a></span>
 <span><strong>Email:</strong><a href="mailto:info@perfectparlour.com">info@perfectparlour.com</a></span>
 <span><strong>Web:</strong><a href="https://perfectparlour.com/">https://perfectparlour.com/</a></span>
-</address></div> -->
-</div>	</div><!-- end col-lg-3 -->
+</address></div>
+</div>	</div>
 
-</div>
+</div> -->
 </div>
 </div>        
 
 
-<div class="subfooter">
-<div class="container">
-<div class="row">
 
-<div class="col-md-6 text-right">
+
+<!-- <div class="col-md-6 text-right">
     <div class="social-icons">
                                             
             <a target="_blank" href="https://www.facebook.com/pg/Perfect.Beauty.Parlour.2007/"><i class="fa fa-facebook"></i></a>                                  
@@ -72,9 +73,7 @@
           
                                                                                                                           
                                                             </div>
-</div>
-</div>
-</div>
-</div>
+</div> -->
+
 
 </footer>

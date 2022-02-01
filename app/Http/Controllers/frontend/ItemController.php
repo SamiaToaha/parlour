@@ -11,6 +11,7 @@ class ItemController extends Controller
     public function viewCategory()
     {
         $category = Service_Category::all();
+        // dd($category);
         return view('Website.service_category', compact('category'));
     }
 }

@@ -13,11 +13,11 @@
    font-size: 15px;
  }
 </style>
-<h4>
-    Service Category List
-</h4>
 
 <div class="reg-form">
+<h4 style="text-align: center;margin-bottom: 50px;">
+    Beautician List
+</h4>
 
 <table class="table">
 
@@ -57,5 +57,5 @@
     
   </tbody>
 </table>
-
+</div>
 @endsection

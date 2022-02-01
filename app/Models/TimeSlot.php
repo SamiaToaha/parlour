@@ -13,4 +13,9 @@ class TimeSlot extends Model
     protected $table="timeslots";
     protected $guarded=[];
 
+    public function service()
+    {
+        return $this->belongsTo(Service::class,'name','id');
+
+}
 }

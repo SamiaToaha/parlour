@@ -13,11 +13,12 @@
  }
 </style>
 
-<h4>
+
+
+<div class="reg-form container">
+<h4 style="text-align: center;margin-bottom: 50px;">
     Service Category List
 </h4>
-
-<div class="reg-form">
 
 <table class="table">
   <thead>
@@ -31,13 +32,15 @@
    @foreach($category as $category)
     <tr>
       <th>{{$category->id}}</th>
-      <td>{{$category->name}}</td>
+      <td>{{$category->service_name}}</td>
       <td>{{$category->category}}</td>
     </tr>
     @endforeach
 
   </tbody>
 </table>
+
+</div>
 
 
 

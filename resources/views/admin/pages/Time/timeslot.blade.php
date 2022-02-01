@@ -25,9 +25,11 @@
   <tbody>
   @foreach($create as $item)
     <tr>
-      <th>{{$item->serial}}</th>
-      <td>{{$item->servicename}}</td>
-      <td>{{$item->timeslot}}</td>
+     
+    <!-- <td>{{$item->name}}</td> -->
+      <td>{{$item->service->name}}</td>
+      <td>{{$item->starting_time}}</td>
+      <td>{{$item->ending_time}}</td>
      
       <!-- <td>
                         <a class="btn btn-primary" href="{{route('service.view',$item->id)}}">View</a>

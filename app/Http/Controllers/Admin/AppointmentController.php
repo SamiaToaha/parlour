@@ -90,6 +90,13 @@ class AppointmentController extends Controller
 
         
     }
+
+    public function clearCart()
+    {
+session()->forget('cart');
+return redirect()->back();
+    }
+
     public function addtocart($id)
     {
         // dd($id);
@@ -135,16 +142,34 @@ class AppointmentController extends Controller
         }
 
 
-        //case 03: product exist into cart
+//case 03: product exist into cart
         //action: increase product quantity (quantity+1)
+
+
+//  if(isset($cartExist[$id])){
+// $cartExist[$id],['quantity']++;
+// session()->put('cart',$cartExist);
+// return redirect()->back();
+// }  
+if(isset($cartExist[$id])) {
+    $cartExist[$id] ['quantity']++;
+    session()->put('cart',$cartExist);
+    return redirect()->back();
+}
+
+
+
     }
-    public function getCart()
+    
+   
+
+
+     
+public function getCart()
     {
        $carts= session()->get('cart');
         return view('website.cart',compact('carts'));
     }
-//    
-
     public function confirmCart()
     {
         //  dd(auth()->user());

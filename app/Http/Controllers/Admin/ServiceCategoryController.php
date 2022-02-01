@@ -26,9 +26,19 @@ class ServiceCategoryController extends Controller
     }
     public function CategoryStore(Request $request){
         // dd($request->all());
+
+        $image_name=null;         
+        if($request->hasFile('image'))
+        {
+            $image_name=date('Ymdhis') .'.'. $request->file('image')->getClientOriginalExtension();
+    
+            $request->file('image')->storeAs('/service category',$image_name);
+        }
+
         Service_Category::create([
             'id'=>$request->id,
             'category'=>$request->category,
+            'image'=> $image_name,
             'service_name'=>$request->service_name,
 
 

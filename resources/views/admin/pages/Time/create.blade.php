@@ -25,19 +25,35 @@
 @endif
 
 
-<div class="mb-3">
-<label for="name" class="form-label">Serial</label>
-<input name='serial' type="number" class="form-control" id="serial">
-</div>
-<div class="mb-3">
-<label for="name" class="form-label">Service Name</label>
-<input name='service name' type="text" class="form-control" id="service name">
-</div>
+
+
 <div class="row">
-<label for="details" class="form-label">Time Slot</label>
-<input name='time' type="time" class="form-control" id="id" aria-describedby="details">
+<label for="details" class="form-label">Starting Time</label>
+<input name='starting_time' type="time" class="form-control" id="id" aria-describedby="details">
 <div id="details" class="form-text"></div>
 </div>
+
+<div class="row">
+<label for="details" class="form-label">Ending Time</label>
+<input name='ending_time' type="time" class="form-control" id="id" aria-describedby="details">
+<div id="details" class="form-text"></div>
+
+
+<div class="form-group">
+    <label for="service" style="font-size:20px;"><b>Service timeslot</label></b>
+    <select name="service" class="form-control">
+      <option>Name</option>
+     
+
+      @foreach ($create as $item)
+
+
+      <option value="{{$item->id}}">{{$item->name}}</option>
+      @endforeach
+    </select>
+    </div>
+</div>
+
 <button type="submit" class="btn btn-primary"><a href=""></a>Submit</button>
 
 </form>

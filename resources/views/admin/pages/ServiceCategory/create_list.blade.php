@@ -2,7 +2,7 @@
 @section('content')
 
 
-<form action="{{route('category.store')}}" method="POST">
+<form action="{{route('category.store')}}" method="POST"enctype="multipart/form-data">
   @csrf
 
   @if(session()->has('success'))
@@ -39,6 +39,12 @@
 <div class="mb-3">
     <label for="service_name" class="form-label">Service Name</label>
     <input name='service_name' type="text" class="form-control" id="name">
+  </div>
+
+  <div class="mb-3">
+    <label for="details" class="form-label">Image</label>
+    <input name='image' type="file" class="form-control" id="id" aria-describedby="details">
+    <div id="details" class="form-text"></div>
   </div>
 
  

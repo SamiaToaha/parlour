@@ -14,8 +14,8 @@
 </style>
 
 <div class="reg-form">
-<h4>
-    Service Category List
+<h4 style="text-align: center;margin-bottom: 50px;">
+    Service List
 </h4>
 <form action="{{route('website.type')}}">
 

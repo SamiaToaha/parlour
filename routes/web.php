@@ -172,7 +172,7 @@ Route::get('/item',[ItemController::class, 'viewCategory'])->name('Website.servi
 // Experts/Beautician
 Route::get('/visit',[ExpertController::class,'expert'])->name('website.expert');
 Route::get('/expert/visit/{id}',[ExpertViewController::class,'expertview'])->name('expert.visit.show');
-
+Route::get('/show/beautician',[ExpertController::class,'beautician'])->name('beautician.profile');
 // Services
 Route::get('/show',[ServicesController::class,'type'])->name('website.type');
 Route::get('/service/view/{id}',[ServiceViewController::class,'serviceView'])->name('service.show');
@@ -199,7 +199,7 @@ Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
 Route::get('/home/addtocart/{id}',[AppointmentController::class,'addtocart'])->name('cart.add');
 Route::get('/get-cart',[AppointmentController::class,'getCart'])->name('cart.get');
 Route::get('/confirm-cart',[AppointmentController::class,'confirmCart'])->name('cart.confirm');
-
+Route::get('/clear-cart',[AppointmentController::class,'clearCart'])->name('cart.clear');
 
 // ?WebAuth
 Route::group(['middleware'=>['web_auth','admin']],function(){

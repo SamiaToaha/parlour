@@ -13,11 +13,16 @@
    font-size: 15px;
  }
 </style>
-<div class="reg-form">
 
-    <h1 style="padding-top: 100px;">My Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</h1>
+<div class="reg-form container">
+
+    <h3 style="padding-top: 100px;">My Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</h3>
     
+<h4 style="text-align: center;margin-bottom: 50px;">
+    
+</h4>
 </div>
+
     <table class="table">
         <thead>
         <tr>
@@ -46,7 +51,7 @@
         </tbody>
     </table>
     <a href="{{route('cart.confirm')}}" class="btn btn-warning">Confirm Cart</a>
-
+    <a href="{{route('cart.clear')}}" class="btn btn-warning">Clear Cart</a>
     
 
 @endsection

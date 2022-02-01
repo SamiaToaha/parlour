@@ -17,6 +17,7 @@ class CreateServiceCategoriesTable extends Migration
             $table->id();
             $table->text('category');
             $table->text('service_name');
+            $table->string('image')->nullable();
            
 
             $table->timestamps();

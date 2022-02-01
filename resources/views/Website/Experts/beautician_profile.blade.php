@@ -55,10 +55,6 @@ body{
     box-shadow: none!important;
 }
 </style>
-<div class="reg-form">
-  
-<h4 style="text-align: center;margin-bottom: 50px;">
-  Customer Profile</h4>
 <div class="container">
     <div class="main-body">
     
@@ -97,7 +93,7 @@ body{
                       <h6 class="mb-0">Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      {{auth()->user()->name}}
+                    {{$item->name}}
                     </div>
 
                    
@@ -106,28 +102,28 @@ body{
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Email</h6>
+                      <h6 class="mb-0">Service Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    {{auth()->user()->email}}
+                    {{$item->service->name}}
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Phone</h6>
+                      <h6 class="mb-0">Details</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    {{auth()->user()->phone_number}}
+                    {{$item->details}}
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Address</h6>
+                      <h6 class="mb-0">Available</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    {{auth()->user()->address}}
+                    {{$item->available}}
                     </div>
                   </div> 
                    <!-- <hr>
@@ -152,6 +148,6 @@ body{
                 <div class="col-sm-6 mb-3">
                
            
-                </div> 
+        
     </div>
     @endsection

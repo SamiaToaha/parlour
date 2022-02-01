@@ -11,7 +11,10 @@
     {{session()->get('success')}}
 </p>
 @endif
-
+<div class="reg-form">
+  
+<h4 style="text-align: center;margin-bottom: 50px;">
+ Give Feedback about your Experience</h4>
 <div class="form-group">
     <label for="exampleInputEmail1">About Service</label>
     <input type="text" name="about_service" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
@@ -34,6 +37,6 @@
   <button type="submit" class="btn btn-success">Submit</button>
 </form>
 </div>
-
+</div>
 
 @endsection

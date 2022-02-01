@@ -44,7 +44,16 @@
 
                             </ul>
 </li>
-                        <li><a href="{{route('website.expert')}}">Beautician</a></li>
+                   <li id="menu-item-1042"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a
+                        href="{{route('website.expert')}}">Beautician</a>
+                        
+                    </li>
+                       
+
+                                    
+                                    
+
                         <li id="menu-item-1042"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a
                             href="{{route('website.booking')}}">Appointment</a>
@@ -68,16 +77,6 @@
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377"><a
                                         title="ServiceCategory" href=" {{route('Website.service_category')}} ">Service Category</a></li>
                            
-                                       
-
-                          
-                             
-
-                            <li id="menu-item-2377"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377"><a
-                                        title="ServiceCategory" href=" # ">Packages</a></li>
-                           
-                                       
 
                            
                             </ul>

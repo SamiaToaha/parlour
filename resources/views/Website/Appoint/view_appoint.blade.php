@@ -17,8 +17,9 @@
  
 </style>
 <div class="reg-form">
-<h1>Appointment View</h1><br><br><br>
-<strong>Approved Appointment</strong>
+<h4 style="text-align: center;margin-bottom: 50px;">
+ View Appointment Status</h4>
+
 <table class="table">
 
   <thead> 
@@ -62,5 +63,5 @@
 </table>
 </div>
 
-
+</div>
 @endsection

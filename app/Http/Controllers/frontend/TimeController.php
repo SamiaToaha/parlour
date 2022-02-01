@@ -9,7 +9,8 @@ use App\Http\Controllers\frontend\TimeController;
 class TimeController extends Controller
 {
     public function choose(){
-        $choose=TimeSlot::all();
+        $choose=TimeSlot::with('service')->get();
+        // dd($choose);
 
         return view('Website.Time.time',compact('choose'));
     }

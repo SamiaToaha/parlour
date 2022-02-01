@@ -2,9 +2,6 @@
 @section('contents')
 
 
-<h1>Appointment</h1>
-
-
 @if(session()->has('success'))
 <p class="alert alert-success">
   
@@ -26,7 +23,8 @@
 
 <div class="reg-form">
   
-
+<h4 style="text-align: center;margin-bottom: 50px;">
+  Please fill up the form for booking Appointment</h4>
 <div class="container">
 <form action="{{route('admin.appointment.store')}}" method="POST">
 @csrf
