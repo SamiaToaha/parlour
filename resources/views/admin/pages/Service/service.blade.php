@@ -13,6 +13,7 @@
 <a href="{{route('service.create')}}"><button type="submit" class="btn btn-success">Create Service</button></a>
 
 </div>
+<div id="PrintTableArea">
 <table class="table">
   <thead>
     <tr>
@@ -48,4 +49,16 @@
 
   </tbody>
 </table>
+</div>
+
+<a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 @endsection

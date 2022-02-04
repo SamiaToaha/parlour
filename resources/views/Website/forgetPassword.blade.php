@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,4 +13,4 @@
    You can reset password from bellow link:
    <a href="{{ route('reset.password.get', $token) }}">Reset Password</a> 
 </body>
-</html>
+</html> -->

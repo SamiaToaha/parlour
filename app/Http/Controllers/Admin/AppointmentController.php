@@ -32,24 +32,38 @@ class AppointmentController extends Controller
 
     public function AppointmentStore(Request $request){
         // dd($request->all());
-        Appointment::create([
-            'id'=>$request->id,
-            'name'=>$request->name,
-            'phonenumber'=>$request->phone_number,
-            'date'=>$request->date,
-            'time'=>$request->time,
-            'address'=>$request->address,
-            'select_beautician'=>$request->select_beautician,
-            'user_id'=>Auth::user()->id,
-           
-            // 'customer_id'=>$request->customer_id,
-            // 'service_id'=>$request->service_id,
-            // 'service_quantity'=>$request->service_quantity,
-            // 'price'=>$request->price,
-            // 'total_price'=>$request->total_price,
-            // 'status'=>$request->status,
-        ]);
-        return redirect()->back()->with('success','Appointment done Successfully');
+        
+        $data = session()->get('cart');
+        if($data){
+            //dd($request->all());
+        //for validation
+        $request->validate([
+            'name'=>'required',
+            'phonenumber'=>'required',
+            'date'=>'required',
+            'time'=>'required']);
+            Appointment::create([
+                'id'=>$request->id,
+                'name'=>$request->name,
+                'phonenumber'=>$request->phone_number,
+                'date'=>$request->date,
+                'time'=>$request->time,
+                'address'=>$request->address,
+                'select_beautician'=>$request->select_beautician,
+                'user_id'=>Auth::user()->id,
+               
+                // 'customer_id'=>$request->customer_id,
+                // 'service_id'=>$request->service_id,
+                // 'service_quantity'=>$request->service_quantity,
+                // 'price'=>$request->price,
+                // 'total_price'=>$request->total_price,
+                // 'status'=>$request->status,
+            ]);
+            return redirect()->back()->with('success','Appointment done Successfully');
+        }else{
+            return redirect()->back()->with('error','Cart is Empty,please add to cart service.');
+        }
+       
     }
     public function list(){
        return view('admin.pages.Appointments.booking_list');
@@ -59,7 +73,7 @@ class AppointmentController extends Controller
     public function appointmentDelete($appointment_id)
     {
         Appointment::find($appointment_id)->delete();
-       return redirect()->back()->with('success','appointment Deleted.');
+        return redirect()->back()->with('success','appointment Deleted.');
     }
         
     
@@ -146,20 +160,20 @@ return redirect()->back();
         //action: increase product quantity (quantity+1)
 
 
-//  if(isset($cartExist[$id])){
-// $cartExist[$id],['quantity']++;
-// session()->put('cart',$cartExist);
-// return redirect()->back();
-// }  
-if(isset($cartExist[$id])) {
-    $cartExist[$id] ['quantity']++;
-    session()->put('cart',$cartExist);
-    return redirect()->back();
-}
+ if(isset($cartExist[$id])){
+$cartExist[$id]['item_qty']++;
+session()->put('cart',$cartExist);
+return redirect()->back();
+}  
+// if(isset($cartExist[$id])) {
+//     $cartExist[$id] ['quantity']++;
+//     session()->put('cart',$cartExist);
+//     return redirect()->back();
+// }
 
 
 
-    }
+    } 
     
    
 
@@ -173,7 +187,7 @@ public function getCart()
     public function confirmCart()
     {
         //  dd(auth()->user());
-        //  dd(session()->get('cart'));
+      
          $data = session()->get('cart');
         //  dd($data);
          foreach ($data as $val) {

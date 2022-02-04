@@ -1,6 +1,6 @@
 @extends('website.master')
 @section('contents'))
-<form action="{{route('customer.actual_update')}}" method="POST">
+<form action="{{route('customer.actual_update')}}" method="POST"enctype="multipart/form-data">
 @method("PUT")
 @csrf
 <div class="reg-form">
@@ -19,6 +19,11 @@
     <label for="address" class="form-label">Address</label>
     <input name='address' type="text" value="{{auth()->user()->address}}" class="form-control" id="id" aria-describedby="address">
     <div id="address" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="details" class="form-label">Image</label>
+    <input name='image' type="file" class="form-control" id="id" aria-describedby="details">
+    <div id="details" class="form-text"></div>
   </div>
   </div>
 

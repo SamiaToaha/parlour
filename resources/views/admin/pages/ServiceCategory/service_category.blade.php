@@ -17,8 +17,8 @@
       <th scope="col">ID</th>
       <th scope="col">Category</th>
       <th scope="col">Service Name</th>
-      <th scope="col">Action</th>
       <th scope="col">Image</th>
+      <th scope="col">Action</th>
       <th scope="col"></th>
      
       <th></th>
@@ -34,9 +34,9 @@
       <td>{{$item->service_name}}</td>
       <td><img src="{{url('/storage/service category/'.$item->image)}}" alt=""></td>
       <td>
-                        <a class="btn btn-primary" href="{{route('category.view',$item->id)}}">View</a>
-                        <a class="btn btn-danger" href="{{route('category.delete',$item->id)}}">Delete</a>
-                        <a class="btn btn-warning" href="{{route('category.update',$item->id)}}">UPDATE</a>
+                        <a class="btn btn-primary" href="{{route('category.view',$item->id)}}">View</a> </td>
+                        <td> <a class="btn btn-danger" href="{{route('category.delete',$item->id)}}">Delete</a> </td>
+                        <td>  <a class="btn btn-warning" href="{{route('category.update',$item->id)}}">UPDATE</a> 
 </td>
     </tr>
     @endforeach

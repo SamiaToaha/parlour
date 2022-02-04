@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+// namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+// use App\Http\Controllers\Controller;
+// use Illuminate\Http\Request;
 
-class ManagersController extends Controller
-{
+// class ManagersController extends Controller
+// {
 //     public function profile()
 //     {
 //         return view('admin.pages.users');
 //     }
 // }  -->
-}
+// }

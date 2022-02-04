@@ -5,9 +5,9 @@
                 <!-- logo begin -->
                 <div id="logo">
                     <a href="https://perfectparlour.com/">
-                        <!-- <img class="logo logo_dark_bg"
+                        <img class="logo logo_dark_bg"
                             src="https://perfectparlour.com/wp-content/uploads/2020/03/Perfect-Beauty-Logo-70.png"
-                            alt=""> -->
+                            alt="">
                         <img class="logo logo_light_bg"
                             src="https://perfectparlour.com/wp-content/uploads/2020/03/Perfect-Beauty-Logo-70.png"
                             alt="">
@@ -43,11 +43,13 @@
                                        
 
                             </ul>
+
 </li>
+
                    <li id="menu-item-1042"
                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a
                         href="{{route('website.expert')}}">Beautician</a>
-                        
+                       
                     </li>
                        
 
@@ -60,7 +62,7 @@
                             <ul role="menu" class="">
                             <li id="menu-item-2377"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377"><a
-                                        title="View Appointment" href="{{ route('appoint.view')}}">View Appointment</a></li>
+                             title="View Appointment" href="{{ route('appoint.view')}}">View Appointment</a></li>
 
                         
                          </ul>
@@ -92,7 +94,7 @@
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3136 ">
                             <a href="{{route('feedback.website')}}">Feedback</a>
                             </li> -->
-                            <li id="menu-item-1045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1045"><a  title="Contact" href="{{route('user.registration')}}">Register</a></li>
+                            <!-- <li id="menu-item-1045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1045"><a  title="Contact" href="{{route('user.registration')}}">Register</a></li> -->
                         
                         @if(auth()->user())
                         <!-- Button trigger modal -->
@@ -130,9 +132,9 @@
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="login">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header"> 
+                <!-- <h5 class="modal-title" id="login">Modal title</h5>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -152,12 +154,14 @@
               </div>
 
               <div class="form-group">
-              <p>Forgot your password?<a href="{{route('forget.password.get')}}">Click Here</a></p>
+              <p>Forgot your password?<a href="{{url('/reset/Password')}}">Click Here</a></p>
               </div>
+              <a href="{{route('user.registration')}}">Please fill up Registration form for login</a>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Submit</button>
+            
         </div>
         </form>
     </div>

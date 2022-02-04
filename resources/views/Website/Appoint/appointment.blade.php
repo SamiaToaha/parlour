@@ -2,30 +2,26 @@
 @section('contents')
 
 
-@if(session()->has('success'))
-<p class="alert alert-success">
-  
-  {{session()->get('success')}}
-</p>
+@if(session('success'))
+        <div class="alert alert-success">
+            {!! session('success') !!}
+        </div>
 @endif
 
-
-@if ($errors->any())
-<div class="alert alert-danger">
-<ul>
-
-@foreach($errors->all() as $error)
-<li>{{ $error }}</li>
-@endforeach
-</ul>
-</div>
+@if(session('error'))
+        <div class="alert alert-danger">
+            {!! session('error') !!}
+    </div>
 @endif
 
 <div class="reg-form">
-  
-<h4 style="text-align: center;margin-bottom: 50px;">
-  Please fill up the form for booking Appointment</h4>
-<div class="container">
+
+<h1 style="text-align: center;margin-bottom: 50px;">
+  Fill up the form for booking Appointment
+</h1>
+
+<div class="container mt-3">
+
 <form action="{{route('admin.appointment.store')}}" method="POST">
 @csrf
 
@@ -60,11 +56,23 @@
   <div id="details" class="form-text"></div>
 </div>
 
-<div class="row">
-<label for="details" class="form-label"> Select Beautician</label>
-  <input name='select_beautician' type="text" class="form-control" id="id" aria-describedby="details">
-  <div id="details" class="form-text"></div>
-</div>
+<!-- <div class="row">
+@foreach($list as $lists)
+<p>{{$lists->name}}</p>
+@endforeach
+</div> -->
+
+<div class="form-group">
+    <label for="category" style="font-size:20px;"><b>Select Beautician</label></b>
+    <select name="category" class="form-control">
+      <option>Select Beautician</option>
+     
+
+      @foreach ($list as $item)
+      <option value="{{$item->id}}">{{$item->name}}</option>
+      @endforeach
+    </select>
+    </div>
 
 <button type="submit" class="btn btn-primary"><a href=""></a>Submit</button>
 </form>

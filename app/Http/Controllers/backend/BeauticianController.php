@@ -36,10 +36,10 @@ public function BeauticianStore(Request $request){
     Beautician::create([
         'id'=>$request->id,
         'name'=>$request->name,
-        'details'=>$request->details,
-        'image'=> $image_name,
-        'available'=>$request->available,
         'service_name'=>$request->service,
+        'details'=>$request->details,
+        'available'=>$request->available,
+        'image'=> $image_name,
 
 
     ]);

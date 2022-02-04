@@ -36,9 +36,10 @@
       <th scope="col">Address</th>
       <th scope="col">Time</th>
       <th scope="col">Date</th>
-      <th scope="col">SelectBeautician</th>
+      <th scope="col">Select Beautician</th>
       <th scope="col">Action</th>
       <th scope="col">Payment Status</th>
+      <th scope="col">Pending Time</th>
       
 
       <th></th>
@@ -57,7 +58,7 @@
       <td>{{$item->address}}</td>
       <td>{{$item->time}}</td>
       <td>{{$item->date}}</td>
-      <td>{{$item->selectbeautician}}</td>
+      <td>{{$item->select_beautician}}</td>
       <td>
    
                         <a class="btn btn-primary" href="{{route('appointment.details',$item->id)}}">Appointment Details</a>
@@ -73,6 +74,7 @@
                         <a class="btn btn-success" href="#">Approved</a>
                         @endif
                         </td>
+                        <td>{{$item->created_at->diffforhumans()}}</td>
 
       </tr>
     @endforeach

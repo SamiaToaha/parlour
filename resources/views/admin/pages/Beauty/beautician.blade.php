@@ -18,11 +18,12 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Service</th>
+      <th scope="col">Service Name</th>
       <th scope="col">Details</th>
+      <th scope="col">Available</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
-      <th scope="col">Available</th>
+     
      
       
       <th></th>

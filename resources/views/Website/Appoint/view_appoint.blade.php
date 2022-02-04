@@ -20,6 +20,7 @@
 <h4 style="text-align: center;margin-bottom: 50px;">
  View Appointment Status</h4>
 
+ <div id="PrintTableArea">
 <table class="table">
 
   <thead> 
@@ -61,6 +62,16 @@
     
   </tbody>
 </table>
+<a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 </div>
 
 </div>

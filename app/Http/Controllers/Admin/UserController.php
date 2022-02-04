@@ -16,8 +16,9 @@ class UserController extends Controller
 
     public function doLogin(Request $request)
     {
-        //dd('hh');
+        //dd($request->all());
         $userInfo=$request->except('_token');
+        //dd($userInfo);
 //        $credentials['email']=$request->user_email;
 //        $credentials['password']=$request->user_password;
 //        dd($credentials);
@@ -25,7 +26,8 @@ class UserController extends Controller
 
 
         if(Auth::attempt($userInfo)){
-            return redirect()->route('home.dashboard')->with('message','Login successful.');
+        //dd('true');
+            return redirect()->route('admin.dashboard.profile')->with('message','Login successful.');
         }
         return redirect()->back()->with('error','Invalid user credentials');
 

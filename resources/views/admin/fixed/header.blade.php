@@ -1,7 +1,7 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <!-- <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a> -->
-        <a class="navbar-brand brand-logo-mini" href=""><img src="" alt="logo"/>Toahas Parlour</a>
+        <a class="navbar-brand brand-logo-mini" href=""><img src="" alt="logo"/>Parlor Del Luna</a>
       </div> 
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -9,14 +9,14 @@
         </button>
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group"> 
+            <!-- <div class="input-group"> 
                <div class="input-group-prepend">
                 <span class="input-group-text" id="search">
                   <i class="icon-search"></i>
                 </span>
               </div>
                <input type="text" class="form-control" placeholder="Search Projects.." aria-label="search" aria-describedby="search">
-            </div>
+            </div> -->
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">

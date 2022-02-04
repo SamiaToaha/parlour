@@ -1,4 +1,4 @@
-@extends('admin.welcome')
+<!-- @extends('admin.welcome')
 @section('content')
 
 <div class="card">
@@ -11,4 +11,4 @@
 
         </div>
 </div>
-@endsection
+@endsection -->

@@ -36,12 +36,12 @@ class CustomerController extends Controller
 public function add(){
     return view('admin.pages.Customers.customer_list');
    }
-   public function customerDetails($customer_id)
-   {
-       $customer=customer::find($customer_id);
-       return view('admin.pages.Customers.details',compact('customer'));
-    }
-    public function customernDelete($customer_id)
+//    public function customerDetails($customer_id)
+//    {
+//        $customer=Customer::find($customer_id);
+//        return view('admin.pages.Customers.details',compact('customer'));
+//     }
+    public function customerDelete($customer_id)
 {
    Customers::find($customer_id)->delete();
    return redirect()->back()->with('success','customer Deleted.');

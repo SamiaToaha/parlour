@@ -16,10 +16,10 @@ class CreateBeauticiansTable extends Migration
         Schema::create('beauticians', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('details');
-            $table->string('image')->nullable();
-            $table->string('available');
             $table->string('service_name');
+            $table->string('details');
+            $table->string('available');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@
 
 <div class="reg-form container">
 
-    <h3 style="padding-top: 100px;">My Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</h3>
+    <h3 style="padding-top: 100px; text-align:center">My Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</h3>
     
 <h4 style="text-align: center;margin-bottom: 50px;">
     

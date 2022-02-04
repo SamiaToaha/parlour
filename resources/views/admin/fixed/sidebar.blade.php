@@ -63,12 +63,12 @@
               <span class="menu-title">Service Category</span>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="{{route('create.package')}}">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Packages</span>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="{{route('check.report')}}">
               <i class="icon-box menu-icon"></i>

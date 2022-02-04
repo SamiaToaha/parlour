@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Models\Beautician;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,8 +13,9 @@ class BookingController extends Controller
 {
     public function appointment(){
 
-$appointment=Appointment::all();
-return view('Website.Appoint.appointment',compact('appointment'));
+        $appointment=Appointment::all();
+        $list = Beautician::all();
+        return view('Website.Appoint.appointment',compact('appointment','list'));
     }
     
 

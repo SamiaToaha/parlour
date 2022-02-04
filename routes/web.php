@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Website\UserController;
 use App\Http\Controllers\Admin\PackageController;
@@ -10,11 +11,11 @@ use App\Http\Controllers\frontend\ItemController;
 use App\Http\Controllers\frontend\TimeController;
 use App\Http\Controllers\Admin\ManagersController;
 use App\Http\Controllers\Admin\TimeSlotController;
-use App\Http\Controllers\backend\ReportController;
 
 
 // website
 
+use App\Http\Controllers\backend\ReportController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\frontend\IndexController;
 use App\Http\Controllers\frontend\ExpertController;
@@ -45,14 +46,14 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 |
 */
 
-
+Route::get('/admin/login',[AdminUserController::class,'login'])->name('admin.login');
+Route::post('/admin/do-login',[AdminUserController::class,'doLogin'])->name('admin.doLogin');
 
 Route::get('/',function() {
 return view('admin.welcome');
  });
 
- Route::get('/admin/login',[AdminUserController::class,'login'])->name('admin.login');
- Route::post('/admin/do-login',[AdminUserController::class,'doLogin'])->name('admin.doLogin');
+
  Route::get('/admin/logout',[AdminUserController::class,'logout'])->name('admin.logout');
 
 // Route::get('/admin',[AdminController::class,'profile'])->name('manager.profile');
@@ -62,7 +63,7 @@ return view('admin.welcome');
 // Customer
 
 Route::get('/customer',[CustomerController::class,'show_list'])->name('customer.show');
-Route::get('/customer_list/add',[CustomerController::class,'add'])->name('customer_list.show');
+// Route::get('/customer_list/add',[CustomerController::class,'add'])->name('customer_list.show');
 Route::get('/customer/search',[CustomerController::class,'customerSearch'])->name('customer.search');
 Route::get('/customer/details/view/{item_id}',[CustomerController::class,'customerDetails'])->name('customer.view');
 Route::get('/customer/delete/{item_id}',[CustomerController::class,'customerDelete'])->name('customer.delete');
@@ -148,6 +149,8 @@ Route::get('/report',[ReportController::class,'reportList'])->name('check.report
 
  Route::get('/', function () { 
     return view('website.master');
+
+
  });
 
 Route::get('/home',[HomeController::class,'dashboard'])->name('home.dashboard');
@@ -172,7 +175,7 @@ Route::get('/item',[ItemController::class, 'viewCategory'])->name('Website.servi
 // Experts/Beautician
 Route::get('/visit',[ExpertController::class,'expert'])->name('website.expert');
 Route::get('/expert/visit/{id}',[ExpertViewController::class,'expertview'])->name('expert.visit.show');
-Route::get('/show/beautician',[ExpertController::class,'beautician'])->name('beautician.profile');
+
 // Services
 Route::get('/show',[ServicesController::class,'type'])->name('website.type');
 Route::get('/service/view/{id}',[ServiceViewController::class,'serviceView'])->name('service.show');
@@ -214,7 +217,16 @@ Route::group(['middleware'=>['web_auth','admin']],function(){
 
 
 });
-Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
-Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
-Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
-Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+Route::get('/reset/Password', function () {
+  return view('auth.forgot_password');
+});
+Route::post('/password/mail', [PasswordController::class, 'send'])->name('send.mail');
+Route::get('/password/reset/{token}/{email}', [PasswordController::class, 'resetView'])->name('pass.reset');
+Route::post('/password/reset/', [PasswordController::class, 'resetPassword'])->name('reset.password');
+
+
+// Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+// Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+// Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+// Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');

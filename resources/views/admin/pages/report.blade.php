@@ -21,7 +21,7 @@
     </div>
     <button type="submit" class="btn btn-default">Search</button>
   </form>
-  
+  <div id="PrintTableArea">
   <table class="table table-bordered">
   <thead>
     <tr>
@@ -49,6 +49,17 @@
 
 </div>
 </div>
+</div>
 
+<a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 
 @endsection

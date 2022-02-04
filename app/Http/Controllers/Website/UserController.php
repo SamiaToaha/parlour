@@ -48,7 +48,7 @@ public function loggedin(Request $request)
 public function logout()
 {
     Auth::logout();
-    return redirect()->route('admin.login')->with('message','Logging out.');
+    return redirect()->route('home.dashboard')->with('message','Logging out.');
 }
 }
 
